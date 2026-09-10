@@ -1,0 +1,29 @@
+/*
+    GLOBAL STYLES & SHARED VALUES
+    --------------------------------
+    This file contains all global and reusable styles used throughout
+    the website. Common values such as colors, typography, spacing,
+    margins, paddings, borders, shadows, transitions, and other
+    frequently repeated styles are defined here.
+
+    The main purpose of this file is to avoid writing the same CSS
+    values repeatedly across different pages and components. By
+    keeping shared values and reusable styles in one place, any
+    global change can be made from a single location and will
+    automatically reflect wherever that value is being used.
+
+    Page-specific or component-specific styles should be kept in
+    their respective CSS files, while anything that is shared
+    across multiple sections or pages should be defined here.
+*/
+
+/* ========================================
+   1. RESET CSS
+======================================== */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
