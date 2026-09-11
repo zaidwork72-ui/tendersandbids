@@ -1,161 +1,245 @@
-/*
-    GLOBAL STYLES & SHARED VALUES
-    --------------------------------
-    This file contains all global and reusable styles used throughout
-    the website. Common values such as colors, typography, spacing,
-    margins, paddings, borders, shadows, transitions, and other
-    frequently repeated styles are defined here.
-
-    The main purpose of this file is to avoid writing the same CSS
-    values repeatedly across different pages and components. By
-    keeping shared values and reusable styles in one place, any
-    global change can be made from a single location and will
-    automatically reflect wherever that value is being used.
-
-    Page-specific or component-specific styles should be kept in
-    their respective CSS files, while anything that is shared
-    across multiple sections or pages should be defined here.
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
-/* ========================================
-   1. RESET CSS
-======================================== */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,300&family=Instrument+Serif&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap");
 
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0;
-    padding: 0;
+    background: var(--page);
+    color: var(--text-body);
+    font-family: var(--font-sans);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p{
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
-ul,
-ol{
+ul, ol {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-button,
-input,
-select,
-textarea{
+button, input, select, textarea {
     font: inherit;
 }
 
-button{
+button {
     border: 0;
     cursor: pointer;
     background: none;
 }
 
-img{
+img {
     display: block;
     max-width: 100%;
 }
 
-/* ========================================
-   2. REPEATED VALUES
-======================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-:root{
-    /* colors  */
-    --primary-bg: #2B62F5;
-    --primary-text: #E8EAF4;
-    --body-text: #9BA2BB;
-    --special-text: #B5BEDC;
-    --light-text: #8D95B0;
+:root {
+    --page: #09090F;
+    --surface: #0E0F1A;
+    --panel: #131526;
+    --primary: #2B62F5;
+    --glow: #379BFC;
+    --text: #E8EAF4;
+    --text-body: #9BA2BB;
+    --text-muted: #8D95B0;
+    --text-italic: #B5BEDC;
+    --text-soft: #787C8D;
+    --text-faint: #50566F;
+    --text-link: #90B4FF;
     --border: #1E2235;
-    --nav-bg: #09090F;    --secondary-bg: #2C324B;
-    --tertiary-bg: #131526;
-    --blue-800: #1A2D5A;
-    /* --primary-bg: #0E0F1A; */
+    --border-strong: #2C324B;
+    --border-inner: #141728;
+    --success: #179462;
+    --success-dot: #1DB97A;
+    --urgent: #E8972A;
+    --white: #FFFFFF;
 
+    --font-sans: "IBM Plex Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --font-ui: Inter, "IBM Plex Sans", sans-serif;
+    --font-serif: "Instrument Serif", serif;
 
-    /* spacing */
-    --spacing-s: 2px;
-    --spacing-m: 4px;
-    --spacing-l: 6px;
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-smm: 14px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-2xl: 40px;
-    --spacing-3xl: 56px;
-    --spacing-4xl: 60px;
-    --spacing-5xl: 80px;
-    --spacing-6xl: 100px;
+    --space-2: 2px;
+    --space-4: 4px;
+    --space-6: 6px;
+    --space-8: 8px;
+    --space-10: 10px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-56: 56px;
+    --space-80: 80px;
+    --space-100: 100px;
 
-    /* border-radius */
     --radius-xs: 2px;
     --radius-sm: 4px;
     --radius-md: 6px;
-    --radius-lg: 8px;
+
+    --content: 1240px;
+    --header-pad-x: var(--space-100);
+    --section-pad-y: var(--space-80);
+    --section-pad-x: var(--space-100);
 }
 
-.primary-btn{
-    padding: 7px 18px;
-    background-color: var(--primary-bg);
+.shell {
+    width: min(100%, calc(var(--content) + var(--section-pad-x) * 2));
+    margin: 0 auto;
+    padding-left: var(--section-pad-x);
+    padding-right: var(--section-pad-x);
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 17.6px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--text-body);
+    text-transform: uppercase;
+}
+
+.heading-xl {
+    font-family: var(--font-sans);
+    font-size: 64px;
+    line-height: 72px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+    color: var(--text);
+}
+
+.heading-lg {
+    font-family: var(--font-sans);
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.heading-lg--center {
+    text-align: center;
+    line-height: 46.84px;
+}
+
+.heading-xl em,
+.heading-lg em {
+    font-family: var(--font-sans);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-italic);
+}
+
+.body-lg {
+    font-size: 16px;
+    line-height: 26.4px;
+    font-weight: 400;
+    color: var(--text-body);
+}
+
+.body-md {
+    font-size: 14px;
+    line-height: 24.75px;
+    color: var(--text-body);
+}
+
+.body-muted {
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--text-muted);
+}
+
+.body-on-dark {
+    font-size: 14px;
+    line-height: 22.4px;
+    color: var(--text);
+}
+
+.fine-print {
+    font-size: 12px;
+    line-height: 19.2px;
+    color: var(--text-body);
+}
+
+.text-accent {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 17.6px;
+    color: var(--text-link);
+}
+
+.text-link {
+    font-size: 14px;
+    line-height: 20.8px;
+    color: var(--text-link);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: var(--radius-sm);
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    white-space: nowrap;
+    border: 1px solid transparent;
 }
 
-.text-higlight{
-    font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--body-text);
-    font-family: "JetBrains Mono", monospace;
-    line-height: 17.6px;
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
 }
 
-.text-primary{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 64px;
-    font-style: normal;
-    color: var(--primary-text);
-    line-height: 72px;
-    font-weight: 300;
+.btn-secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-muted);
 }
 
-.text-primary-italic{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 64px;
-    font-style: italic;
-    color: var(--special-text);
-    line-height: 72px;
-    font-weight: 300;
-}
-
-.text-nav a{
-    font-size: 14px;
+.btn-sm {
+    padding: 7px 18px;
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    line-height: 21.6px;
     font-weight: 500;
-    font-style: normal;
-    font-family: "IBM Plex Sans", sans-serif;
-    color: var(--light-text);
+}
+
+.btn-md {
+    padding: 11px 24px;
+    font-size: 14px;
     line-height: 22.4px;
+    font-weight: 500;
+}
+
+.btn-lg {
+    padding: 14px 32px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.06);
+}
+
+.btn-secondary:hover,
+.nav-link:hover,
+.text-link:hover,
+.region-card:hover,
+.footer-col a:hover {
+    color: var(--text);
 }
