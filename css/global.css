@@ -17,6 +17,8 @@
     across multiple sections or pages should be defined here.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 /* ========================================
    1. RESET CSS
 ======================================== */
@@ -27,3 +29,133 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin: 0;
+}
+
+ul,
+ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea{
+    font: inherit;
+}
+
+button{
+    border: 0;
+    cursor: pointer;
+    background: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/* ========================================
+   2. REPEATED VALUES
+======================================== */
+
+:root{
+    /* colors  */
+    --primary-bg: #2B62F5;
+    --primary-text: #E8EAF4;
+    --body-text: #9BA2BB;
+    --special-text: #B5BEDC;
+    --light-text: #8D95B0;
+    --border: #1E2235;
+    --nav-bg: #09090F;    --secondary-bg: #2C324B;
+    --tertiary-bg: #131526;
+    --blue-800: #1A2D5A;
+    /* --primary-bg: #0E0F1A; */
+
+
+    /* spacing */
+    --spacing-s: 2px;
+    --spacing-m: 4px;
+    --spacing-l: 6px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-smm: 14px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 40px;
+    --spacing-3xl: 56px;
+    --spacing-4xl: 60px;
+    --spacing-5xl: 80px;
+    --spacing-6xl: 100px;
+
+    /* border-radius */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+}
+
+.primary-btn{
+    padding: 7px 18px;
+    background-color: var(--primary-bg);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-higlight{
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--body-text);
+    font-family: "JetBrains Mono", monospace;
+    line-height: 17.6px;
+}
+
+.text-primary{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    color: var(--primary-text);
+    line-height: 72px;
+    font-weight: 300;
+}
+
+.text-primary-italic{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 64px;
+    font-style: italic;
+    color: var(--special-text);
+    line-height: 72px;
+    font-weight: 300;
+}
+
+.text-nav a{
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--light-text);
+    line-height: 22.4px;
+}
