@@ -105,3 +105,46 @@ if (toggle && navRight) {
         toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
 }
+
+const revealItems = document.querySelectorAll(".reveal");
+if (revealItems.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 80}ms`;
+        revealObserver.observe(item);
+    });
+}
+
+// stat-target 
+const counter = document.querySelector(".counter");
+if (counter) {
+    const targetText = counter.dataset.target || "0";
+    const targetSuffix = targetText.includes("+") ? "+" : "";
+    const target = Number.parseInt(targetText.replace(/[^0-9]/g, ""), 10) || 0;
+    const duration = 2000;
+
+    let startTime = null;
+    function animateCounter(currentTime) {
+        if (!startTime) {
+            startTime = currentTime;
+        }
+
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const currentValue = Math.floor(progress * target);
+        counter.textContent = `${currentValue.toLocaleString()}${targetSuffix}`;
+
+        if (progress < 1) {
+            requestAnimationFrame(animateCounter);
+        }
+    }
+
+    requestAnimationFrame(animateCounter);
+}

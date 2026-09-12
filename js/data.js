@@ -16,8 +16,7 @@ const homepageData = {
     {
       number: "01",
       title: "Discover",
-      text: "Describe what you're looking for in plain language. Our AI interprets your intent and maps it to the right opportunities across global markets.",
-      accent: true
+      text: "Describe what you're looking for in plain language. Our AI interprets your intent and maps it to the right opportunities across global markets."
     },
     {
       number: "02",
