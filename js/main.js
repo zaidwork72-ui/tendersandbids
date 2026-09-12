@@ -11,6 +11,28 @@ function renderList(id, items, template) {
 mount("site-header", renderNavbar());
 mount("site-footer", renderFooter());
 
+const heroSection = document.querySelector(".hero");
+if (heroSection) {
+    const glow = heroSection.querySelector(".hero__glow");
+
+    const updateHeroGlow = (event) => {
+        if (!glow) return;
+
+        const rect = heroSection.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+        heroSection.style.setProperty("--hero-glow-x", `${x}%`);
+        heroSection.style.setProperty("--hero-glow-y", `${y}%`);
+    };
+
+    heroSection.addEventListener("pointermove", updateHeroGlow);
+    heroSection.addEventListener("pointerleave", () => {
+        heroSection.style.setProperty("--hero-glow-x", "70%");
+        heroSection.style.setProperty("--hero-glow-y", "30%");
+    });
+}
+
 document.querySelector(".search-bar__icon").innerHTML = icons.search;
 
 renderList("trust-badges", homepageData.trustBadges, (item) => `

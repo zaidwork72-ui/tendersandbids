@@ -10,7 +10,7 @@ const homepageData = {
     { icon: "globe", label: "Global coverage" },
     { icon: "unlock", label: "No subscription required" },
     { icon: "layers", label: "Relevant opportunities" },
-    { icon: "check", label: "Built for action" }
+    { icon: "verified", label: "Built for action" }
   ],
   steps: [
     {

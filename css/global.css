@@ -67,6 +67,8 @@ a {
     --success-dot: #1DB97A;
     --urgent: #E8972A;
     --white: #FFFFFF;
+    --unique: #1A2D5A;
+    --region-hover: #151522;
 
     --font-sans: "IBM Plex Sans", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
@@ -208,6 +210,9 @@ a {
     background: transparent;
     border-color: var(--border);
     color: var(--text-muted);
+    transition: 
+        border-color 0.3s ease-in, 
+        color 0.2s ease-in; 
 }
 
 .btn-sm {
@@ -236,10 +241,14 @@ a {
     filter: brightness(1.06);
 }
 
-.btn-secondary:hover,
 .nav-link:hover,
 .text-link:hover,
-.region-card:hover,
 .footer-col a:hover {
     color: var(--text);
+}
+
+.btn-secondary:hover{
+    border-color: var(--primary);
+    color: var(--primary);
+    transition: 0.3 ease-in;
 }

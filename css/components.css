@@ -67,7 +67,7 @@
 }
 
 .status-badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: var(--space-6);
     padding: var(--space-8) var(--space-12);
@@ -76,18 +76,21 @@
     border-radius: var(--radius-xs);
     font-family: var(--font-mono);
     font-size: 12px;
-    line-height: 17.6px;
     letter-spacing: -0.8px;
     color: var(--text-body);
     width: max-content;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-top: 9px;
 }
 
 .status-badge__dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--success-dot);
-    box-shadow: 0 0 0 3px rgba(23, 148, 98, 0.28);
+    flex-shrink: 0;
+    transform: translateY(-0.5px);
 }
 
 .search-bar {
@@ -138,7 +141,7 @@
     gap: var(--space-8);
     color: var(--text-body);
     font-size: 14px;
-    line-height: 20.8px;
+    /* line-height: 20.8px; */
     font-weight: 500;
 }
 
@@ -189,6 +192,21 @@
     background: var(--page);
     border: 1px solid var(--border);
     color: var(--text-muted);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.region-card:hover {
+    background: var(--region-hover);
+    border-color: var(--border-strong);
+}
+
+.region-card svg {
+    display: inline-block;
+    transition: transform 0.22s ease;
+}
+
+.region-card:hover svg {
+    transform: translateX(20px);
 }
 
 .region-card strong {
@@ -220,6 +238,10 @@
     color: var(--text);
 }
 
+.chip:hover{
+    background-color: var(--region-hover);
+}
+
 .chip b {
     font-family: var(--font-mono);
     font-size: 12px;
@@ -233,8 +255,8 @@
     align-items: center;
     gap: var(--space-8);
     padding: var(--space-4) var(--space-8);
-    background: var(--page);
-    border: 1px solid var(--border);
+    background: var(--unique);
+    border: 1px solid var(--primary);
     border-radius: var(--radius-xs);
     font-size: 11px;
     line-height: 17.6px;
@@ -243,6 +265,8 @@
 .filter-chip span {
     font-family: var(--font-mono);
     color: var(--text-body);
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 .filter-chip strong {
