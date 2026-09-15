@@ -9,11 +9,43 @@ const icons = {
   globe: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">public</span>',
   unlock: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">lock_open</span>',
   layers: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">layers</span>',
-  youtube: '<span class="material-symbols-rounded" aria-hidden="true">smart_display</span>',
-  facebook: '<span class="material-symbols-rounded" aria-hidden="true">facebook</span>',
-  twitter: '<span class="material-symbols-rounded" aria-hidden="true">alternate_email</span>',
-  instagram: '<span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>',
-  linkedin: '<span class="material-symbols-rounded" aria-hidden="true">hub</span>',
+  youtube: `
+    <span class="social-icon" style="background:#E8EAF4;">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.8 3.9-6.8 3.9Z"/>
+      </svg>
+    </span>
+  `,
+  facebook: `
+    <span class="social-icon" style="background:#E8EAF4;">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H7.6v3h2.7v8h3.2Z"/>
+      </svg>
+    </span>
+  `,
+  instagram: `
+    <span class="social-icon" style="background:#E8EAF4;">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1"/>
+      </svg>
+    </span>
+  `,
+  twitter: `
+    <span class="social-icon" style="background:#E8EAF4;">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L3 2h6.2l4.3 5.7L18.9 2Zm-1.1 17.9h1.7L8.3 4H6.5l11.3 15.9Z"/>
+      </svg>
+    </span>
+  `,
+  linkedin: `
+    <span class="social-icon" style="background:#E8EAF4;">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.5 8.5H3V21h3.5V8.5ZM4.8 3A2.1 2.1 0 1 0 4.8 7.2 2.1 2.1 0 0 0 4.8 3ZM21 13.8c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.7H9V21h3.5v-6.2c0-1.6.3-3.2 2.3-3.2 1.9 0 1.9 1.8 1.9 3.3V21H21v-7.2Z"/>
+      </svg>
+    </span>
+  `,
   google: `
     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path fill="#4285F4" d="M21.35 12.27c0-.79-.07-1.55-.22-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.42z"/>
@@ -98,6 +130,7 @@ function renderFooter() {
         </div>
         ${columns}
       </div>
+      <div class = line><span class = actual-line></span></div>
       <div class="shell footer-bottom">
         <p>Copyright © 2026 TendersAndBids. All Rights Reserved.</p>
         <p class="footer-secure">Payment secured by: <img src="assets/images/stripe.png" alt="stripe" width="50" height="21"></p>

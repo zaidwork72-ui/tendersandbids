@@ -106,6 +106,15 @@ if (toggle && navRight) {
     });
 }
 
+const searchInput = document.querySelector(".search-bar__input");
+const clearSearchButton = document.querySelector(".search-bar__clear");
+if (searchInput && clearSearchButton) {
+    clearSearchButton.addEventListener("click", () => {
+        searchInput.value = "";
+        searchInput.focus();
+    });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 if (revealItems.length) {
     const revealObserver = new IntersectionObserver((entries, observer) => {

@@ -14,53 +14,71 @@
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
   >
 
-  <link rel="stylesheet" href="./auth.css" />
+  <!-- Global CSS -->
   <link rel="stylesheet" href="../../css/global.css">
+
+  <!-- Location specific CSS -->
+  <link rel="stylesheet" href="./auth.css" />
 </head>
 
 <body>
 
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand__mark">T</span>
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="location-topbar">
+
+    <div class="location-brand">
+      <span class="location-brand__mark">T</span>
       <span>Tenders &amp; Bids</span>
     </div>
 
-    <nav class="navmenu" aria-label="Main navigation">
+    <nav class="location-navmenu" aria-label="Main navigation">
       <a href="#">Discover</a>
       <a href="#">Markets</a>
       <a href="#">How It Works</a>
       <a href="#">Pricing</a>
     </nav>
+
   </header>
 
 
-  <main class="page-shell">
+  <!-- ==================== PAGE ==================== -->
 
-    <section class="auth-card" aria-label="Location selection card">
+  <main class="location-page">
 
-      <!-- Step Indicator -->
-      <div class="step-indicator">
-        <span>Step 3 of 4</span>
+    <section
+      class="location-card"
+      aria-label="Location selection card"
+    >
 
-        <div class="step-dots">
-          <span class="step-dot is-active"></span>
-          <span class="step-dot is-active"></span>
-          <span class="step-dot is-active"></span>
-          <span class="step-dot is-soft"></span>
+      <!-- ==================== STEP INDICATOR ==================== -->
+
+      <div class="location-step">
+
+        <span class="location-step__text">
+          Step 3 of 4
+        </span>
+
+        <div class="location-step__dots">
+          <span class="location-step__dot is-active"></span>
+          <span class="location-step__dot is-active"></span>
+          <span class="location-step__dot is-active"></span>
+          <span class="location-step__dot is-soft"></span>
         </div>
+
       </div>
 
 
-      <!-- Header Section -->
-      <div class="auth-card__header">
+      <!-- ==================== HEADER ==================== -->
 
-        <h1 class="auth-title">
+      <div class="location-header">
+
+        <h1 class="location-title">
           Where are you looking for<br>
           opportunities?
         </h1>
 
-        <p class="auth-subtitle">
+        <p class="location-subtitle">
           Select the countries or markets you want to monitor.
           You can refine your locations anytime.
         </p>
@@ -68,140 +86,227 @@
       </div>
 
 
-      <!-- Location Section -->
-      <div class="auth-card__email">
+      <!-- ==================== LOCATION CONTENT ==================== -->
 
-        <div class="search-input">
+      <div class="location-content">
+
+
+        <!-- Main Country Search -->
+
+        <div class="location-search">
+
+          <span class="material-symbols-rounded location-search__icon">
+            search
+          </span>
+
           <input
             type="text"
             placeholder="Search and add countries..."
             aria-label="Search countries"
           />
+
         </div>
 
 
-        <div class="location-list">
+        <!-- ==================== INDIA ==================== -->
 
-          <!-- India -->
-          <div class="location-item">
+        <div class="location-group">
 
-            <div class="location-item__left">
-              <span class="country-chip is-selected">
-                India
-              </span>
-            </div>
+          <div class="location-country">
 
-            <span class="material-symbols-rounded location-remove">
+            <span class="location-country__name">
+              India
+            </span>
+
+            <span class="material-symbols-rounded location-country__remove">
               close
             </span>
 
           </div>
 
 
-          <!-- Popular Locations -->
-          <div class="location-header">
-            <span class="location-header__label">
-              Popular
+          <div class="location-state-search">
+
+            <span class="material-symbols-rounded">
+              search
             </span>
+
+            <input
+              type="text"
+              placeholder="Search cities or states..."
+              aria-label="Search Indian states"
+            />
+
           </div>
 
-          <div class="option-grid">
 
-            <span class="option-chip is-selected">
+          <div class="location-popular">
+            Popular
+          </div>
+
+
+          <div class="location-options">
+
+            <button class="location-option is-selected" type="button">
               Maharashtra
-            </span>
+            </button>
 
-            <span class="option-chip">
+            <button class="location-option is-selected" type="button">
               Delhi
-            </span>
+            </button>
 
-            <span class="option-chip">
+            <button class="location-option" type="button">
               Karnataka
-            </span>
+            </button>
 
-            <span class="option-chip">
+            <button class="location-option" type="button">
               Tamil Nadu
-            </span>
+            </button>
 
-            <span class="option-chip">
+            <button class="location-option" type="button">
               Gujarat
-            </span>
+            </button>
 
           </div>
 
 
-          <!-- United States -->
-          <div class="location-item">
-
-            <div class="location-item__left">
-              <span class="country-chip is-selected">
-                United States
-              </span>
-            </div>
-
-            <span class="material-symbols-rounded location-remove">
-              close
-            </span>
-
-          </div>
-
-          <div class="option-grid">
-
-            <span class="option-chip is-selected">
-              California
-            </span>
-
-            <span class="option-chip">
-              New York
-            </span>
-
-            <span class="option-chip">
-              Texas
-            </span>
-
-            <span class="option-chip">
-              Florida
-            </span>
-
-          </div>
-
-
-          <!-- UAE -->
-          <div class="location-item">
-
-            <div class="location-item__left">
-              <span class="country-chip is-selected">
-                UAE
-              </span>
-            </div>
-
-            <span class="material-symbols-rounded location-remove">
-              close
-            </span>
-
-          </div>
-
-          <div class="option-grid">
-
-            <span class="option-chip is-selected">
-              Dubai
-            </span>
-
-            <span class="option-chip">
-              Abu Dhabi
-            </span>
-
-            <span class="option-chip">
-              Sharjah
-            </span>
-
-          </div>
+          <span class="location-more">
+            +95 more
+          </span>
 
         </div>
 
+
+        <!-- ==================== UNITED STATES ==================== -->
+
+        <div class="location-group">
+
+          <div class="location-country">
+
+            <span class="location-country__name">
+              United States
+            </span>
+
+            <span class="material-symbols-rounded location-country__remove">
+              close
+            </span>
+
+          </div>
+
+
+          <div class="location-state-search">
+
+            <span class="material-symbols-rounded">
+              search
+            </span>
+
+            <input
+              type="text"
+              placeholder="Search cities or states..."
+              aria-label="Search United States states"
+            />
+
+          </div>
+
+
+          <div class="location-popular">
+            Popular
+          </div>
+
+
+          <div class="location-options">
+
+            <button class="location-option is-selected" type="button">
+              California
+            </button>
+
+            <button class="location-option is-selected" type="button">
+              New York
+            </button>
+
+            <button class="location-option" type="button">
+              Texas
+            </button>
+
+            <button class="location-option" type="button">
+              Florida
+            </button>
+
+          </div>
+
+
+          <span class="location-more">
+            +46 more
+          </span>
+
+        </div>
+
+
+        <!-- ==================== UAE ==================== -->
+
+        <div class="location-group">
+
+          <div class="location-country">
+
+            <span class="location-country__name">
+              UAE
+            </span>
+
+            <span class="material-symbols-rounded location-country__remove">
+              close
+            </span>
+
+          </div>
+
+
+          <div class="location-state-search">
+
+            <span class="material-symbols-rounded">
+              search
+            </span>
+
+            <input
+              type="text"
+              placeholder="Search cities or states..."
+              aria-label="Search UAE states"
+            />
+
+          </div>
+
+
+          <div class="location-popular">
+            Popular
+          </div>
+
+
+          <div class="location-options">
+
+            <button class="location-option is-selected" type="button">
+              Dubai
+            </button>
+
+            <button class="location-option" type="button">
+              Abu Dhabi
+            </button>
+
+            <button class="location-option" type="button">
+              Sharjah
+            </button>
+
+          </div>
+
+
+          <span class="location-more">
+            +4 more
+          </span>
+
+        </div>
+
+
+        <!-- ==================== CONTINUE ==================== -->
 
         <button
-          class="primary-btn"
+          class="location-continue"
           type="button"
           data-next="notifications.html"
         >
@@ -211,12 +316,16 @@
       </div>
 
 
-      <!-- Footer Section -->
-      <div class="auth-card__legal">
+      <!-- ==================== FOOTER ==================== -->
 
-        <p class="auth-meta">
-          <a href="notifications.html">Skip for now</a>
-        </p>
+      <div class="location-footer">
+
+        <a
+          href="notifications.html"
+          class="location-skip"
+        >
+          Skip for now
+        </a>
 
       </div>
 
