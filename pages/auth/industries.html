@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Which industries are you looking for? | Tenders & Bids</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+  >
+
+  <link rel="stylesheet" href="./auth.css" />
+  <link rel="stylesheet" href="../../css/global.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">T</span>
+      <span>Tenders &amp; Bids</span>
+    </div>
+
+    <nav class="navmenu" aria-label="Main navigation">
+      <a href="#">Discover</a>
+      <a href="#">Markets</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+    </nav>
+  </header>
+
+
+  <main class="page-shell">
+
+    <section class="auth-card" aria-label="Industry selection card">
+
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <span>Step 2 of 4</span>
+
+        <div class="step-dots">
+          <span class="step-dot is-active"></span>
+          <span class="step-dot is-active"></span>
+          <span class="step-dot is-soft"></span>
+          <span class="step-dot is-soft"></span>
+        </div>
+      </div>
+
+
+      <!-- Header Section -->
+      <div class="auth-card__header">
+
+        <h1 class="auth-title">
+          Which industries are you
+          looking for?
+        </h1>
+
+        <p class="auth-subtitle">
+          Select all that apply. You can change these anytime.
+        </p>
+
+      </div>
+
+
+      <!-- Industry Selection Section -->
+      <div class="auth-card__email">
+
+        <div class="option-grid">
+          <span class="option-chip">Construction</span>
+          <span class="option-chip is-selected">IT &amp; Technology</span>
+          <span class="option-chip">Healthcare</span>
+          <span class="option-chip">Defense &amp; Military</span>
+          <span class="option-chip">Energy &amp; Utilities</span>
+          <span class="option-chip">Transportation</span>
+          <span class="option-chip">Education</span>
+          <span class="option-chip">Environmental</span>
+          <span class="option-chip">Consulting</span>
+          <span class="option-chip">Manufacturing</span>
+          <span class="option-chip">Telecommunications</span>
+          <span class="option-chip">Financial Services</span>
+        </div>
+
+
+
+      </div>
+
+
+      <!-- Footer Section -->
+      <div class="auth-card__legal">
+                <button
+          class="primary-btn"
+          type="button"
+          data-next="location.html"
+        >
+          Continue
+        </button>
+
+        <p class="auth-meta">
+          <a href="location.html">Skip for now</a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="./auth.js"></script>
+  <script src="../../js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Check your email | Tenders & Bids</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+  >
+
+  <link rel="stylesheet" href="./auth.css" />
+  <link rel="stylesheet" href="../../css/global.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">T</span>
+      <span>Tenders &amp; Bids</span>
+    </div>
+
+    <nav class="navmenu" aria-label="Main navigation">
+      <a href="#">Discover</a>
+      <a href="#">Markets</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+    </nav>
+  </header>
+
+
+  <main class="page-shell">
+
+    <section class="auth-card" aria-label="Email verification card">
+
+      <!-- 1. Header Section -->
+      <div class="auth-card__header">
+        <h1 class="auth-title">Check your email</h1>
+
+        <p class="auth-subtitle">
+          We sent a 6-digit code to
+          <strong class="verify-email">your@email.com</strong>
+        </p>
+      </div>
+
+
+      <!-- 2. Verification Section -->
+      <div class="auth-card__email">
+
+        <div class="field">
+          <label>Verify code</label>
+
+          <div class="verify-box">
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 1"
+            />
+
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 2"
+            />
+
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 3"
+            />
+
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 4"
+            />
+
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 5"
+            />
+
+            <input
+              class="code-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="Digit 6"
+            />
+          </div>
+        </div>
+
+        <button
+          class="primary-btn"
+          type="button"
+          data-next="create-account.html"
+        >
+          Verify Code
+        </button>
+
+      </div>
+
+
+      <!-- 3. Footer Section -->
+      <div class="auth-card__legal">
+
+        <p class="auth-meta">
+          Didn't receive it?
+          <a href="email-verify.html">Resend code</a>
+        </p>
+
+        <p class="auth-meta auth-meta--back">
+          <a href="login.html">← Back to email</a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="./auth.js"></script>
+  <script src="../../js/components.js"></script>
+
+</body>
+</html>

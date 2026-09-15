@@ -89,6 +89,14 @@ a {
     --white: #FFFFFF;
     --unique: #1A2D5A;
     --region-hover: #151522;
+    --login-page-bg: #0B0C10;
+    --login-border: #1E293B;
+    --login-card-bg: #12141C;
+    --login-title-text: #F1F3F9;
+    --login-subtitle-text: #94A3B8;
+    --login-input: #64748B;
+    --chip-bg: #131E3D;
+    --chip-bg-disable: #09090F;
 
     --font-sans: "IBM Plex Sans", sans-serif;
     --font-mono: "JetBrains Mono", monospace;

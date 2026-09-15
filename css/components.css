@@ -1,3 +1,30 @@
+.material-symbols-rounded {
+    font-family: "Material Symbols Rounded";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.icon-brand {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.icon-check {
+    color: var(--success);
+    font-size: 16px;
+}
+
 .site-header {
     position: relative;
     background: var(--page);
@@ -47,6 +74,7 @@
 .nav-link__chevron {
     display: inline-flex;
     color: var(--text-muted);
+    font-size: 16px;
 }
 
 .nav-toggle {
@@ -122,8 +150,11 @@
     color: var(--text-muted);
     font-size: 14px;
     line-height: 18.2px;
-    padding: 14px 0;
+    padding: 14px 16px 14px 0;
     outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn-search {
@@ -236,12 +267,13 @@
     border-color: var(--border-strong);
 }
 
-.region-card svg {
-    display: inline-block;
+.region-card .material-symbols-rounded {
+    display: inline-flex;
     transition: transform 0.22s ease;
+    font-size: 18px;
 }
 
-.region-card:hover svg {
+.region-card:hover .material-symbols-rounded {
     transform: translateX(20px);
 }
 
@@ -316,6 +348,7 @@
     gap: var(--space-10);
     padding: var(--space-12) var(--space-16);
     border-bottom: 1px solid var(--border-inner);
+    background-color: var(--surface);
 }
 
 .result-row__meta {
@@ -413,6 +446,11 @@
     align-items: center;
     gap: var(--space-16);
     color: var(--text);
+}
+
+.social-row .material-symbols-rounded {
+    font-size: 20px;
+    color: currentColor;
 }
 
 .footer-bottom {

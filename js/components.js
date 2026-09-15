@@ -1,17 +1,44 @@
+const rootPath = window.location.pathname.includes('/pages/') ? '../../' : './';
+
 const icons = {
-  chevron: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6.5L8 10.5L12 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  search: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.3"/><path d="M11 11.5L14 14.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>`,
-  arrow: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  check: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 8.2L7.1 10.3L11.2 6" stroke="#179462" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  verified: `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" aria-hidden="true"><circle cx="10.5" cy="10" r="8" stroke="#2B62F5" stroke-width="1.4"/><path d="M7.2 10.2L9.4 12.3L13.8 7.7" stroke="#2B62F5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  globe: `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" aria-hidden="true"><circle cx="10.5" cy="10" r="7.25" stroke="#2B62F5" stroke-width="1.3"/><path d="M3.5 10H17.5M10.5 2.75C12.8 5.1 14 7.5 14 10s-1.2 4.9-3.5 7.25C8.2 14.9 7 12.5 7 10s1.2-4.9 3.5-7.25Z" stroke="#2B62F5" stroke-width="1.3"/></svg>`,
-  unlock: `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" aria-hidden="true"><rect x="4.5" y="9" width="12" height="8" rx="1.4" stroke="#2B62F5" stroke-width="1.3"/><path d="M7.2 9V6.6A3.3 3.3 0 0 1 13.8 6.6" stroke="#2B62F5" stroke-width="1.3" stroke-linecap="round"/></svg>`,
-  layers: `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" aria-hidden="true"><path d="M10.5 3.5L17.5 7L10.5 10.5L3.5 7L10.5 3.5Z" stroke="#2B62F5" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 11.5L10.5 15L17 11.5" stroke="#2B62F5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  youtube: `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.8 6.2a2.1 2.1 0 0 0-1.5-1.5C14 4.4 10 4.4 10 4.4s-4 0-5.3.3a2.1 2.1 0 0 0-1.5 1.5C3 7.5 3 10 3 10s0 2.5.2 3.8a2.1 2.1 0 0 0 1.5 1.5c1.3.3 5.3.3 5.3.3s4 0 5.3-.3a2.1 2.1 0 0 0 1.5-1.5C17 12.5 17 10 17 10s0-2.5-.2-3.8ZM8.7 12.6V7.4L12.8 10 8.7 12.6Z"/></svg>`,
-  facebook: `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11.6 17V10.7h2.1l.3-2.5h-2.4V6.6c0-.7.2-1.2 1.3-1.2h1.3V3.1c-.2 0-1-.1-2-1.1-1.1 0-1.8.6-1.8 1.8v1.4H8.2v2.5h2.1V17h1.3Z"/></svg>`,
-  twitter: `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M14.7 3.5h2.2L12.6 9l5.2 7.5h-4.1L10.4 12 6.3 16.5H4.1l4.6-5.8L3.8 3.5h4.2l3 4.2 3.7-4.2Zm-.8 11.6h1.2L6.2 4.8H4.9l8.9 10.3Z"/></svg>`,
-  instagram: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3.4" y="3.4" width="13.2" height="13.2" rx="3.4" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="10" r="3.1" stroke="currentColor" stroke-width="1.3"/><circle cx="14.2" cy="5.8" r="0.8" fill="currentColor"/></svg>`,
-  linkedin: `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.7 7.4H3.4V16h2.3V7.4ZM4.55 3.8a1.35 1.35 0 1 0 0 2.7 1.35 1.35 0 0 0 0-2.7ZM16.6 16h-2.3v-4.1c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3.9-.1.2-.1.5-.1.8V16H9.3s.1-7.1 0-7.8h2.3v1.1c.3-.5 1-1.2 2.4-1.2 1.8 0 3.1 1.2 3.1 3.7V16Z"/></svg>`
+  chevron: '<span class="material-symbols-rounded" aria-hidden="true">expand_more</span>',
+  search: '<span class="material-symbols-rounded" aria-hidden="true">search</span>',
+  arrow: '<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>',
+  check: '<span class="material-symbols-rounded icon-check" aria-hidden="true">check</span>',
+  verified: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">verified</span>',
+  globe: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">public</span>',
+  unlock: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">lock_open</span>',
+  layers: '<span class="material-symbols-rounded icon-brand" aria-hidden="true">layers</span>',
+  youtube: '<span class="material-symbols-rounded" aria-hidden="true">smart_display</span>',
+  facebook: '<span class="material-symbols-rounded" aria-hidden="true">facebook</span>',
+  twitter: '<span class="material-symbols-rounded" aria-hidden="true">alternate_email</span>',
+  instagram: '<span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>',
+  linkedin: '<span class="material-symbols-rounded" aria-hidden="true">hub</span>',
+  google: `
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#4285F4" d="M21.35 12.27c0-.79-.07-1.55-.22-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.42z"/>
+      <path fill="#34A853" d="M12 21.75c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.53A9.75 9.75 0 0 0 12 21.75z"/>
+      <path fill="#FBBC05" d="M6.54 13.83A5.86 5.86 0 0 1 6.23 12c0-.64.11-1.26.31-1.83V7.64H3.29A9.74 9.74 0 0 0 2.25 12c0 1.57.38 3.05 1.04 4.36l3.25-2.53z"/>
+      <path fill="#EA4335" d="M12 6.14c1.43 0 2.72.49 3.73 1.45l2.8-2.8C16.83 3.15 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.71 5.39l3.25 2.53C7.31 7.86 9.46 6.14 12 6.14z"/>
+    </svg>
+  `,
+  microsoft: `
+  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="2" y="2" width="9.5" height="9.5" fill="#F25022"/>
+    <rect x="12.5" y="2" width="9.5" height="9.5" fill="#7FBA00"/>
+    <rect x="2" y="12.5" width="9.5" height="9.5" fill="#00A4EF"/>
+    <rect x="12.5" y="12.5" width="9.5" height="9.5" fill="#FFB900"/>
+  </svg>
+`,
+
+apple: `
+  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M17.05 12.54c-.02-2.25 1.84-3.34 1.92-3.39-1.05-1.53-2.68-1.74-3.25-1.76-1.37-.14-2.7.82-3.4.82-.71 0-1.8-.8-2.95-.78-1.51.02-2.91.88-3.69 2.22-1.59 2.76-.4 6.82 1.12 9.06.76 1.1 1.64 2.32 2.81 2.28 1.13-.05 1.56-.73 2.93-.73 1.36 0 1.75.73 2.94.71 1.22-.02 1.99-1.11 2.72-2.22.85-1.28 1.2-2.52 1.22-2.59-.03-.01-2.34-.9-2.37-3.62ZM14.82 5.93c.62-.75 1.04-1.79.93-2.83-.9.04-1.99.6-2.64 1.35-.58.67-1.09 1.73-.95 2.75 1.01.08 2.04-.51 2.66-1.27Z"
+    />
+  </svg>
+`
 };
 
 function renderNavbar() {
@@ -35,7 +62,7 @@ function renderNavbar() {
         </button>
         <div class="navbar__right">
           <ul class="nav-list">${links}</ul>
-          <a class="btn btn-primary btn-sm" href="#">Get started free</a>
+          <a class="btn btn-primary btn-sm" href="${rootPath}pages/auth/login.html">Get started free</a>
         </div>
       </nav>
     </header>
@@ -78,3 +105,12 @@ function renderFooter() {
     </footer>
   `;
 }
+
+
+document.querySelectorAll('[data-icon]').forEach((element) => {
+  const iconName = element.dataset.icon;
+
+  if (icons[iconName]) {
+    element.innerHTML = icons[iconName];
+  }
+});

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Welcome back | Tenders & Bids</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+  >
+
+  <link rel="stylesheet" href="./auth.css" />
+  <link rel="stylesheet" href="../../css/global.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">T</span>
+      <span>Tenders &amp; Bids</span>
+    </div>
+
+    <nav class="navmenu" aria-label="Main navigation">
+      <a href="#">Discover</a>
+      <a href="#">Markets</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+    </nav>
+  </header>
+
+
+  <main class="page-shell">
+
+    <section class="auth-card" aria-label="Login form">
+
+      <!-- 1. Welcome Section -->
+      <div class="auth-card__header">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">
+          Enter your email to continue.
+        </p>
+      </div>
+
+
+      <!-- 2. Email Section -->
+      <div class="auth-card__email">
+
+        <div class="field">
+          <label for="email">Email address</label>
+
+          <input
+            id="email"
+            type="email"
+            placeholder="name@company.com"
+            value="name@company.com"
+          />
+        </div>
+
+        <button
+          class="primary-btn"
+          type="button"
+          data-next="email-verify.html"
+        >
+          Continue with email
+        </button>
+
+      </div>
+
+
+      <!-- 3. Divider Section -->
+      <div class="auth-card__divider">
+
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+
+      </div>
+
+
+      <!-- 4. Social Login Section -->
+      <div class="auth-card__social">
+
+        <div class="social-row">
+
+          <button
+            type="button"
+            class="social-btn"
+            data-next="create-account.html"
+          >
+            <span class="icon" data-icon="google"></span>
+            Google
+          </button>
+
+          <button
+            type="button"
+            class="social-btn"
+            data-next="create-account.html"
+          >
+            <span class="icon" data-icon="microsoft"></span>
+            Microsoft
+          </button>
+
+          <button
+            type="button"
+            class="social-btn"
+            data-next="create-account.html"
+          >
+            <span class="icon" data-icon="apple"></span>
+            Apple
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- 5. Legal Section -->
+      <div class="auth-card__legal">
+
+        <p class="legal-note">
+          By continuing, you agree to our
+          <a href="#">Terms of Service</a>
+          and
+          <a href="#">Privacy Policy</a>.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="./auth.js"></script>
+  <script src="../../js/components.js"></script>
+</body>
+</html>

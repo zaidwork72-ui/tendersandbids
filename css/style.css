@@ -94,12 +94,28 @@
     box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
 }
 
+.preview-card__glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 390px;
+    height: 214px;
+    transform: translate(-50%, -50%);
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(300px);
+    mix-blend-mode: normal;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .preview-card__chrome {
     display: flex;
     align-items: center;
     gap: var(--space-12);
     padding: var(--space-12) var(--space-16);
     border-bottom: 1px solid var(--border);
+    background-color: var(--surface);
 }
 
 .preview-card__dots {
@@ -161,6 +177,7 @@
     font-size: 11px;
     line-height: 17.6px;
     color: var(--text-body);
+    background-color: var(--surface);
 }
 
 .preview-card__all {
@@ -349,10 +366,9 @@
 
 .feature-grid li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-8);
     font-size: 14px;
-    line-height: 20.8px;
     color: var(--text-body);
 }
 

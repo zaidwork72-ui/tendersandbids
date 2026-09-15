@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay ahead of new opportunities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+  <link rel="stylesheet" href="./auth.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">T</span>
+      <span>Tenders &amp; Bids</span>
+    </div>
+    <nav class="navmenu" aria-label="Main navigation">
+      <a href="#">Discover</a>
+      <a href="#">Markets</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="auth-card" aria-label="Notifications setup card">
+      <div class="step-indicator">
+        <span>Step 4 of 4</span>
+        <div class="step-dots">
+          <span class="step-dot is-active"></span>
+          <span class="step-dot is-active"></span>
+          <span class="step-dot is-active"></span>
+          <span class="step-dot is-active"></span>
+        </div>
+      </div>
+
+      <h1 class="auth-title">Stay ahead of new<br>opportunities</h1>
+      <p class="auth-subtitle">Choose how you want to be notified about relevant tenders.</p>
+
+      <div class="toggle-list">
+        <div class="toggle-row">
+          <div class="toggle-row__left">
+            <div class="toggle-label">
+              Email Digest
+              <small>Summary of new tenders matching your interests.</small>
+            </div>
+          </div>
+          <span class="switch is-on" aria-label="Email digest toggle"></span>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-row__left">
+            <div class="toggle-label">
+              New Tender Matches
+              <small>Get notified when a relevant tender is published.</small>
+            </div>
+          </div>
+          <span class="switch is-on" aria-label="Tender matches toggle"></span>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-row__left">
+            <div class="toggle-label">
+              Deadline Reminders
+              <small>Get reminded before a tender closes.</small>
+            </div>
+          </div>
+          <span class="switch is-on" aria-label="Deadlines toggle"></span>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-row__left">
+            <div class="toggle-label">
+              Bid Status Updates
+              <small>Get notified when a buyer updates a tender.</small>
+            </div>
+          </div>
+          <span class="switch" aria-label="Bid status toggle"></span>
+        </div>
+      </div>
+
+      <button class="primary-btn" type="button" data-next="ready.html" style="margin-top: 22px;">Complete Setup</button>
+      <a href="ready.html" class="secondary-link">Skip for now</a>
+    </section>
+  </main>
+
+  <script src="./auth.js"></script>
+</body>
+</html>

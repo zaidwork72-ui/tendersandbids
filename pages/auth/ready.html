@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You’re ready to discover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+  <link rel="stylesheet" href="./auth.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">T</span>
+      <span>Tenders &amp; Bids</span>
+    </div>
+    <nav class="navmenu" aria-label="Main navigation">
+      <a href="#">Discover</a>
+      <a href="#">Markets</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="auth-card" aria-label="Readiness card">
+      <div class="verify-box" style="margin-top: 2px;">
+        <span class="icon-pill" style="width: 54px; height: 54px; border-radius: 50%; background: rgba(31, 202, 139, 0.12); color: #5ee5b0; font-size: 30px;">check</span>
+      </div>
+
+      <h1 class="auth-title" style="margin-top: 18px; font-size: 28px;">You’re ready to discover.</h1>
+      <p class="auth-subtitle" style="max-width: 300px;">Your preferences are set. Start finding procurement opportunities worth pursuing.</p>
+
+      <div class="card-stack">
+        <article class="feature-card">
+          <div class="feature-card__icon">search</div>
+          <h3>AI Search</h3>
+          <p>Describe what you need in plain language.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">notifications</div>
+          <h3>Real-time Alerts</h3>
+          <p>Get notified before deadlines close.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">travel_explore</div>
+          <h3>Global Scale</h3>
+          <p>Monitor tenders across global markets.</p>
+        </article>
+      </div>
+
+      <button class="primary-btn" type="button" data-next="../../index.html" style="margin-top: 26px;">Start Exploring</button>
+      <a href="../../index.html" class="secondary-link">View pricing</a>
+    </section>
+  </main>
+
+  <script src="./auth.js"></script>
+</body>
+</html>
