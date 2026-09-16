@@ -151,16 +151,18 @@
     background: transparent;
     color: var(--text-muted);
     font-size: 14px;
-    line-height: 18.2px;
-    padding: var(--space-14) 0;
+    line-height: 20px;      /* CHANGED: fixed, predictable value */
+    padding: 0;              /* CHANGED: padding hata di, JS ab exact height set karega */
+    box-sizing: border-box;  /* NEW: zaroori hai */
     outline: none;
     resize: none;
     overflow: hidden;
-    text-overflow: initial;
-    white-space: normal;
-    max-height: 62px;
     font-family: var(--font-ui);
-    align-self: center;
+    align-self: center;      /* isi se ab real vertical centering milegi */
+}
+
+.search-bar__input.is-scrollable {
+    overflow-y: auto;
 }
 
 .search-bar__input::-webkit-scrollbar {
@@ -177,10 +179,6 @@
     background: transparent;
     cursor: pointer;
     align-self: stretch;
-}
-
-.search-bar__clear:hover {
-    background: rgba(255, 255, 255, 0.02);
 }
 
 .search-bar__clear .material-symbols-rounded {

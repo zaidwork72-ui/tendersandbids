@@ -40,7 +40,7 @@
     background:
         radial-gradient(circle at 50% 50%, rgba(157, 55, 252, 0.72), rgba(157, 55, 252, 0.18) 38%, rgba(157, 55, 252, 0.08) 52%, transparent 72%);
     filter: blur(119px);
-    opacity: 0.95;
+    opacity: 0;
     pointer-events: none;
     mix-blend-mode: screen;
     will-change: left, top;

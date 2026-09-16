@@ -28,10 +28,21 @@ if (heroSection) {
         heroSection.style.setProperty("--hero-glow-y", `${y}%`);
     };
 
+    heroSection.addEventListener("pointerenter", (event) => {
+        if (!glow) return;
+        glow.style.transition = "none"; // purani jagah se slide na ho, seedha naye point par appear ho
+        updateHeroGlow(event);
+        glow.style.opacity = "0.95";
+        requestAnimationFrame(() => {
+            glow.style.transition = "";
+        });
+    });
+
     heroSection.addEventListener("pointermove", updateHeroGlow);
+
     heroSection.addEventListener("pointerleave", () => {
-        heroSection.style.setProperty("--hero-glow-x", "70%");
-        heroSection.style.setProperty("--hero-glow-y", "30%");
+        if (!glow) return;
+        glow.style.opacity = "0"; // hero ke bahar jaate hi turant hide, koi leftover position nahi
     });
 }
 
@@ -110,11 +121,34 @@ if (toggle && navRight) {
 
 const searchInput = document.querySelector(".search-bar__input");
 const clearSearchButton = document.querySelector(".search-bar__clear");
-if (searchInput && clearSearchButton) {
-    clearSearchButton.addEventListener("click", () => {
-        searchInput.value = "";
-        searchInput.focus();
-    });
+if (searchInput) {
+    const lineHeight = parseFloat(getComputedStyle(searchInput).lineHeight) || 20;
+    const maxHeight = lineHeight * 2; // strict 2-line cap
+
+    const autosizeSearchInput = () => {
+        searchInput.style.height = "auto";
+        const needed = searchInput.scrollHeight;
+
+        if (needed <= maxHeight) {
+            searchInput.style.height = `${needed}px`;
+            searchInput.classList.remove("is-scrollable");
+        } else {
+            searchInput.style.height = `${maxHeight}px`;
+            searchInput.classList.add("is-scrollable");
+        }
+    };
+
+    searchInput.addEventListener("input", autosizeSearchInput);
+    autosizeSearchInput();
+
+    if (clearSearchButton) {
+        clearSearchButton.addEventListener("click", () => {
+            searchInput.value = "";
+            autosizeSearchInput();
+            searchInput.blur();
+            searchInput.focus();
+        });
+    }
 }
 
 const revealItems = document.querySelectorAll(".reveal");
