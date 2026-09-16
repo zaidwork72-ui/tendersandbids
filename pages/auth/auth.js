@@ -1,6 +1,11 @@
 // auth.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  const headerTarget = document.getElementById('site-header');
+  if (headerTarget && typeof renderNavbar === 'function') {
+    headerTarget.outerHTML = renderNavbar();
+  }
+
   document.querySelectorAll('[data-next]').forEach((button) => {
     button.addEventListener('click', () => {
       const next = button.dataset.next;

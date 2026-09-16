@@ -88,8 +88,8 @@ function renderNavbar() {
   return `
     <header class="site-header">
       <nav class="navbar" aria-label="Primary">
-        <a class="brand" href="index.html" aria-label="Tenders & Bids">
-          <img src="assets/logos/logo.svg" alt="" width="130" height="23">
+        <a class="brand" href="${rootPath}index.html" aria-label="Tenders & Bids">
+          <img src="${rootPath}assets/logos/logo.svg" alt="" width="130" height="23">
         </a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -117,8 +117,8 @@ function renderFooter() {
     <footer class="site-footer">
       <div class="shell footer-top">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="Tenders & Bids">
-            <img src="assets/logos/logo.svg" alt="" width="130" height="23">
+          <a class="brand" href="${rootPath}index.html" aria-label="Tenders & Bids">
+            <img src="${rootPath}assets/logos/logo.svg" alt="" width="130" height="23">
           </a>
           <p class="footer-brand__text">TendersAndBids is backed by first-generation technocrats with over 50 years of combined expertise in tendering and public procurement. Our mission is to provide accurate, up-to-date global tender information at an affordable cost to suppliers across industries</p>
           <p class="footer-col__title">CONNECT WITH US</p>
@@ -135,7 +135,7 @@ function renderFooter() {
       <div class = line><span class = actual-line></span></div>
       <div class="shell footer-bottom">
         <p>Copyright © 2026 TendersAndBids. All Rights Reserved.</p>
-        <p class="footer-secure">Payment secured by: <img src="assets/images/stripe.png" alt="stripe" width="50" height="21"></p>
+        <p class="footer-secure">Payment secured by: <img src="${rootPath}assets/images/stripe.png" alt="stripe" width="50" height="21"></p>
       </div>
     </footer>
   `;
