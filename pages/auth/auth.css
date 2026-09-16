@@ -216,6 +216,21 @@ button, input {
   font-family: var(--font-sans);
 }
 
+.sec-btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: var(--space-12) var(--space-24);
+  background: transparent;
+  color: var(--login-title-text);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  border: 1px solid var(--login-border);
+}
+
 .primary-btn:active {
   transform: translateY(1px);
 }
@@ -259,7 +274,6 @@ button, input {
 
 .secondary-link {
   display: block;
-  margin-top: 18px;
   text-align: center;
   color: rgba(190, 211, 241, 0.9);
   font-size: 14px;
@@ -327,8 +341,7 @@ button, input {
     font-weight: 600;
 }
 
-.location-list,
-.toggle-list {
+.location-list {
   margin-top: 12px;
 }
 
@@ -352,14 +365,14 @@ button, input {
   gap: 10px;
 }
 
-.location-header {
+/* .location-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 14px;
   margin-bottom: 6px;
   padding: 0 2px;
-}
+} */
 
 .search-input {
   position: relative;
@@ -421,21 +434,33 @@ button, input {
   cursor: pointer;
 }
 
+.toggle-list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+}
+
 .toggle-row {
   padding: 12px 14px;
+  margin-top: 0;
+  border-radius: 6px;
+  border: 1px solid var(--login-border);
+  background-color: transparent;
 }
 
 .toggle-label {
   font-size: 14px;
   line-height: 1.45;
-  color: var(--text);
+  color: var(--login-title-text);
+  font-weight: 600;
 }
 
 .toggle-label small {
   display: block;
   margin-top: 4px;
-  color: var(--muted);
+  color: var(--login-subtitle-text);
   font-size: 12px;
+  font-weight: 400;
 }
 
 .switch {
@@ -486,7 +511,6 @@ button, input {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 22px;
 }
 
 .feature-card {
@@ -515,17 +539,17 @@ button, input {
 }
 
 .feature-card h3 {
-  margin: 0;
   font-size: 14px;
   line-height: 1.4;
   color: var(--text);
+  font-weight: 500;
 }
 
 .feature-card p {
-  margin: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
+  font-weight: 400;
 }
 
 .verify-box {
@@ -755,23 +779,14 @@ button, input {
    ========================================================= */
 
 .location-card {
-
-  width: min(100%, 440px);
-
+  width: min(100%, 480px);
   display: flex;
-
   flex-direction: column;
-
-  gap: 0;
-
+  gap: var(--space-32);
   padding: var(--space-40);
-
   background: var(--login-card-bg);
-
   border: 1px solid var(--login-border);
-
   border-radius: var(--space-12);
-
 }
 
 
@@ -780,72 +795,46 @@ button, input {
    ========================================================= */
 
 .location-step {
-
   width: 100%;
-
   display: flex;
-
   align-items: center;
-
-  justify-content: space-between;
-
-  margin-bottom: var(--space-32);
-
+  justify-content: flex-start;
+  gap: var(--space-8);
+  color: var(--glow);
 }
 
 
 .location-step__text {
-
-  color: rgba(121, 159, 232, 0.9);
-
   font-family: var(--font-sans);
-
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: 0.16em;
-
   text-transform: uppercase;
-
 }
 
 
 .location-step__dots {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 6px;
-
 }
 
 
 .location-step__dot {
-
   width: 25px;
-
   height: 2px;
-
   border-radius: 2px;
-
   background: rgba(100, 137, 201, 0.22);
-
 }
 
 
 .location-step__dot.is-active {
-
   background: rgba(47, 135, 255, 0.95);
-
 }
 
 
 .location-step__dot.is-soft {
-
   background: rgba(122, 150, 199, 0.16);
-
 }
 
 
@@ -854,145 +843,88 @@ button, input {
    ========================================================= */
 
 .location-header {
-
   width: 100%;
-
   display: flex;
-
   flex-direction: column;
-
   gap: var(--space-8);
-
-  margin-bottom: var(--space-24);
-
 }
-
 
 .location-title {
-
-  margin: 0;
-
   color: var(--login-title-text);
-
   font-family: var(--font-sans);
-
   font-size: 24px;
-
   line-height: 100%;
-
   font-weight: 400;
-
 }
-
 
 .location-subtitle {
-
   margin: 0;
-
   color: var(--login-subtitle-text);
-
   font-family: var(--font-sans);
-
   font-size: 14px;
-
   line-height: 140%;
-
   font-weight: 400;
-
 }
-
 
 /* =========================================================
    LOCATION CONTENT
    ========================================================= */
 
 .location-content {
-
   width: 100%;
-
   display: flex;
-
+  gap: var(--space-16);
   flex-direction: column;
-
 }
 
-
-/* =========================================================
-   MAIN COUNTRY SEARCH
-   ========================================================= */
-
 .location-search {
-
   position: relative;
-
   width: 100%;
-
-  height: 42px;
-
-  margin-bottom: 12px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .location-search input {
-
   width: 100%;
-
-  height: 42px;
-
-  padding: 0 12px 0 36px;
-
-  border: 1px solid rgba(130, 153, 196, 0.2);
-
+  padding: 13px 12px 13px 40px;
+  border: 1px solid var(--login-border);
   border-radius: 8px;
-
   outline: none;
-
-  background: rgba(7, 15, 24, 0.7);
-
+  background: transparent;
   color: var(--text);
-
   font-family: var(--font-sans);
-
   font-size: 13px;
-
 }
-
 
 .location-search input::placeholder {
-
-  color: rgba(175, 197, 229, 0.55);
-
+  color: var(--login-input);
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: var(--font-sans);
 }
-
 
 .location-search input:focus {
-
-  border-color: rgba(60, 140, 255, 0.65);
-
+  border-color: var(--glow)
 }
-
 
 .location-search__icon {
-
   position: absolute;
-
   left: 12px;
-
   top: 50%;
-
   z-index: 1;
-
   transform: translateY(-50%);
-
-  color: rgba(175, 197, 229, 0.75);
-
-  font-size: 17px;
-
+  color: var(--login-input);
+  font-size: 18px;
+  font-weight: 400;
   pointer-events: none;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* =========================================================
    LOCATION GROUP
@@ -1001,231 +933,137 @@ button, input {
    ========================================================= */
 
 .location-group {
-
   width: 100%;
-
-  margin-top: 10px;
-
-  padding: 10px;
-
-  border: 1px solid rgba(119, 144, 189, 0.16);
-
+  padding: var(--space-12);
+  border: 1px solid var(--login-border);
   border-radius: 8px;
-
-  background: rgba(8, 15, 25, 0.45);
-
+  gap: var(--space-10);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-12);
 }
-
-
-/* =========================================================
-   COUNTRY HEADER
-   ========================================================= */
 
 .location-country {
-
   width: 100%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
-  min-height: 20px;
-
 }
-
 
 .location-country__name {
-
-  color: var(--text);
-
+  color: var(--login-title-text);
   font-family: var(--font-sans);
-
-  font-size: 13px;
-
+  font-size: 14px;
   line-height: 1.2;
-
-  font-weight: 500;
-
+  font-weight: 600;
 }
-
 
 .location-country__remove {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
-  width: 16px;
-
-  height: 16px;
-
+  padding: var(--space-2);
   border: 1px solid rgba(130, 153, 196, 0.25);
-
   border-radius: 4px;
-
   color: rgba(190, 210, 240, 0.75);
-
   font-size: 13px;
-
+  cursor: pointer;
 }
-
 
 /* =========================================================
    STATE / CITY SEARCH
    ========================================================= */
 
 .location-state-search {
-
   position: relative;
-
   width: 100%;
-
-  height: 28px;
-
-  margin-top: 7px;
-
 }
-
 
 .location-state-search input {
-
   width: 100%;
-
-  height: 28px;
-
-  padding: 0 8px 0 25px;
-
-  border: 1px solid rgba(119, 144, 189, 0.16);
-
-  border-radius: 5px;
-
+  padding: 10px 8px 10px 25px;
+  border: 1px solid var(--login-border);
+  border-radius: 10px;
   outline: none;
-
-  background: rgba(7, 15, 24, 0.7);
-
+  background: transparent;
   color: var(--text);
-
   font-family: var(--font-sans);
-
-  font-size: 9px;
-
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .location-state-search input::placeholder {
-
   color: rgba(175, 197, 229, 0.55);
-
 }
-
 
 .location-state-search input:focus {
-
   border-color: rgba(60, 140, 255, 0.65);
-
 }
-
 
 .location-state-search .material-symbols-rounded {
-
   position: absolute;
-
   left: 8px;
-
   top: 50%;
-
   z-index: 1;
-
   transform: translateY(-50%);
-
   color: rgba(175, 197, 229, 0.65);
-
   font-size: 13px;
-
   pointer-events: none;
-
 }
-
 
 /* =========================================================
    POPULAR LABEL
    ========================================================= */
 
+.popular{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    align-items: flex-start;
+    justify-content: center;
+}   
+
 .location-popular {
-
-  margin-top: 7px;
-
-  color: rgba(180, 197, 221, 0.65);
-
+  color: var(--login-subtitle-text);
   font-family: var(--font-sans);
-
-  font-size: 8px;
-
-  line-height: 1;
-
-  font-weight: 500;
-
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
-
 
 /* =========================================================
    LOCATION OPTIONS
    ========================================================= */
 
 .location-options {
-
   display: flex;
-
   flex-wrap: wrap;
-
   align-items: center;
-
-  gap: 5px;
-
-  margin-top: 4px;
-
+  gap: var(--space-8);
 }
-
 
 .location-option {
-
-  min-height: 20px;
-
-  padding: 4px 8px;
-
-  border: 1px solid rgba(119, 144, 189, 0.2);
-
+  padding: var(--space-6) var(--space-10);
+  border: 1px solid var(--login-border);
   border-radius: 999px;
-
-  background: rgba(13, 21, 32, 0.8);
-
-  color: var(--text-soft);
-
+  color: var(--login-title-text);
   font-family: var(--font-sans);
-
-  font-size: 8px;
-
-  line-height: 1;
-
-  font-weight: 500;
-
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 600;
   cursor: pointer;
-
 }
 
-
 .location-option.is-selected {
-
   border-color: rgba(78, 144, 255, 0.9);
-
   background: rgba(46, 122, 255, 0.85);
-
   color: #ffffff;
-
 }
 
 
@@ -1234,19 +1072,12 @@ button, input {
    ========================================================= */
 
 .location-more {
-
   display: block;
-
-  margin-top: 6px;
-
-  color: rgba(160, 181, 215, 0.5);
-
+  color: var(--login-subtitle-text);
   font-family: var(--font-sans);
-
-  font-size: 8px;
-
-  line-height: 1;
-
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 400;
 }
 
 
@@ -1255,48 +1086,26 @@ button, input {
    ========================================================= */
 
 .location-continue {
-
   width: 100%;
-
-  height: 36px;
-
-  margin-top: 14px;
-
-  padding: 0 20px;
-
+  padding: var(--space-12) var(--space-24);
   border: 0;
-
   border-radius: 5px;
-
   background: var(--primary);
-
   color: #ffffff;
-
   font-family: var(--font-sans);
-
   font-size: 12px;
-
   font-weight: 600;
-
   cursor: pointer;
-
   transition: transform 0.2s ease,
               opacity 0.2s ease;
-
 }
-
 
 .location-continue:hover {
-
   opacity: 0.92;
-
 }
 
-
 .location-continue:active {
-
   transform: translateY(1px);
-
 }
 
 
@@ -1309,12 +1118,12 @@ button, input {
   width: 100%;
 
   display: flex;
+  flex-direction: column;
 
   align-items: center;
-
+  gap: var(--space-16);
   justify-content: center;
 
-  margin-top: 8px;
 
 }
 

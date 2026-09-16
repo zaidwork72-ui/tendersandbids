@@ -3,60 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You’re ready to discover</title>
+
+  <title>You’re ready to discover | Tenders &amp; Bids</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+  >
+
   <link rel="stylesheet" href="./auth.css" />
+  <link rel="stylesheet" href="../../css/global.css">
 </head>
+
 <body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
   <header class="topbar">
+
     <div class="brand">
+
       <span class="brand__mark">T</span>
-      <span>Tenders &amp; Bids</span>
+
+      <span>
+        Tenders &amp; Bids
+      </span>
+
     </div>
+
+
     <nav class="navmenu" aria-label="Main navigation">
+
       <a href="#">Discover</a>
       <a href="#">Markets</a>
       <a href="#">How It Works</a>
       <a href="#">Pricing</a>
+
     </nav>
+
   </header>
 
+
+  <!-- ==================== PAGE ==================== -->
+
   <main class="page-shell">
-    <section class="auth-card" aria-label="Readiness card">
-      <div class="verify-box" style="margin-top: 2px;">
-        <span class="icon-pill" style="width: 54px; height: 54px; border-radius: 50%; background: rgba(31, 202, 139, 0.12); color: #5ee5b0; font-size: 30px;">check</span>
+
+    <section
+      class="auth-card"
+      aria-label="Readiness card"
+    >
+
+
+      <!-- ==================== SUCCESS ICON ==================== -->
+
+      <div class="ready-icon">
+
+        <span class="ready-icon__symbol">
+          check
+        </span>
+
       </div>
 
-      <h1 class="auth-title" style="margin-top: 18px; font-size: 28px;">You’re ready to discover.</h1>
-      <p class="auth-subtitle" style="max-width: 300px;">Your preferences are set. Start finding procurement opportunities worth pursuing.</p>
+
+      <!-- ==================== HEADER ==================== -->
+
+      <div class="auth-card__header">
+
+        <h1 class="auth-title">
+          You’re ready to discover.
+        </h1>
+
+        <p class="auth-subtitle">
+          Your preferences are set. Start finding procurement
+          opportunities worth pursuing.
+        </p>
+
+      </div>
+
+
+      <!-- ==================== FEATURES ==================== -->
 
       <div class="card-stack">
-        <article class="feature-card">
-          <div class="feature-card__icon">search</div>
-          <h3>AI Search</h3>
-          <p>Describe what you need in plain language.</p>
-        </article>
+
+
+        <!-- AI Search -->
 
         <article class="feature-card">
-          <div class="feature-card__icon">notifications</div>
-          <h3>Real-time Alerts</h3>
-          <p>Get notified before deadlines close.</p>
+
+          <div class="feature-card__icon">
+            search
+          </div>
+
+          <h3>
+            AI Search
+          </h3>
+
+          <p>
+            Describe what you need in plain language.
+          </p>
+
         </article>
 
+
+        <!-- Real-time Alerts -->
+
         <article class="feature-card">
-          <div class="feature-card__icon">travel_explore</div>
-          <h3>Global Scale</h3>
-          <p>Monitor tenders across global markets.</p>
+
+          <div class="feature-card__icon">
+            notifications
+          </div>
+
+          <h3>
+            Real-time Alerts
+          </h3>
+
+          <p>
+            Get notified before deadlines close.
+          </p>
+
         </article>
+
+
+        <!-- Global Scale -->
+
+        <article class="feature-card">
+
+          <div class="feature-card__icon">
+            travel_explore
+          </div>
+
+          <h3>
+            Global Scale
+          </h3>
+
+          <p>
+            Monitor tenders across global markets.
+          </p>
+
+        </article>
+
+
       </div>
 
-      <button class="primary-btn" type="button" data-next="../../index.html" style="margin-top: 26px;">Start Exploring</button>
-      <a href="../../index.html" class="secondary-link">View pricing</a>
+
+      <!-- ==================== ACTION ==================== -->
+
+<div class="auth-card__legal">
+          <button
+        class="primary-btn"
+        type="button"
+        data-next="../../index.html"
+      >
+        Start Exploring
+      </button>
+      
+                <button
+        class="sec-btn"
+        type="button"
+        data-next="../../index.html"
+      >
+        Start Exploring
+      </button>
+</div>
+
+
+
+      <!-- ==================== SECONDARY ACTION ==================== -->
+
+
+
+
     </section>
+
   </main>
 
+
   <script src="./auth.js"></script>
+  <script src="../../js/components.js"></script>
+
 </body>
 </html>

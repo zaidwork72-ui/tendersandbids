@@ -1,3 +1,5 @@
+// data.js
+
 const homepageData = {
   navLinks: [
     { label: "Tenders", href: "#", hasChevron: true },
@@ -116,3 +118,36 @@ const homepageData = {
     }
   ]
 };
+
+const locationData = [
+  {
+    country : "India",
+    states: [
+      { name: "Maharashtra", selected: true},
+      { name: "Delhi", selected: true},
+      { name: "Karnataka", selected: false},
+      {name: "Tamil Nadu", selected: false},
+      {name: "Gujarat", selected: false}
+    ],
+    more: "+95 more"
+  },
+  {
+    country : "United States",
+    states: [
+      {name: "California", selected: true},
+      {name: "New York", selected: true},
+      {name: "Texas", selected: false},
+      {name: "Florida", selected: false}
+    ],
+    more: "+46 more"
+  },
+  {
+    country : "UAE",
+    states: [
+      {name: "Dubai", selected: true},
+      {name: "Abu Dhabi", selected: false},
+      {name: "Sharjah", selected: false}
+    ],
+    more: "+4 more"
+  }
+]

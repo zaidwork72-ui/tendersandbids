@@ -1,3 +1,5 @@
+// main.js
+
 function mount(id, html) {
     document.getElementById(id).outerHTML = html;
 }

@@ -1,3 +1,5 @@
+// components.js
+
 const rootPath = window.location.pathname.includes('/pages/') ? '../../' : './';
 
 const icons = {
