@@ -250,6 +250,14 @@ a {
     font-size: 13.5px;
     line-height: 21.6px;
     font-weight: 500;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-sm:hover{
+    background-color: var(--primary);
+    color: var(--text);
 }
 
 .btn-md {

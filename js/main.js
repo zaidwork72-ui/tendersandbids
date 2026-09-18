@@ -62,27 +62,24 @@ renderList("filter-chips", homepageData.searchFilters, (item) => `
     </div>
 `);
 
-renderList("preview-results", homepageData.searchResults, (item) => `
+renderList("preview-results", homepageData.steps, (item) => `
     <article class="result-row">
         <div>
             <p class="result-row__meta">
-                <span>${item.flag}</span>
-                <span>${item.country}</span>
-                <span class="result-row__dot">·</span>
-                <span class="result-row__industry">${item.industry}</span>
+                <span class = "num">${item.number}</span>
+                <span class = "icon">${icons[item.icon]}</span>
             </p>
-            <p class="result-row__title">${item.title}</p>
-        </div>
-        <div class="result-row__aside">
-            <span class="result-row__value">${item.value}</span>
-            <span class="result-row__deadline${item.urgent ? " is-urgent" : ""}">${item.deadline}</span>
+            <p class="result-roww">
+                <span class="result-row__industry">${item.title}</span>
+                <span class="result-row__title">${item.text}</span>
+            </p>
         </div>
     </article>
 `);
 
-renderList("step-grid", homepageData.steps, (item) => `
+renderList("step-grid", homepageData.why, (item) => `
     <article class="step-card${item.accent ? " is-accent" : ""}">
-        <p class="step-card__num">${item.number}</p>
+        <p class="step-card__num">${icons[item.icon]}</p>
         <h3>${item.title}</h3>
         <p>${item.text}</p>
     </article>
@@ -108,6 +105,7 @@ renderList("industry-chips", homepageData.industries, (item) => `
 renderList("credit-features", homepageData.creditFeatures, (item) => `
     <li>${icons.check}<span>${item}</span></li>
 `);
+
 
 const toggle = document.querySelector(".nav-toggle");
 const navRight = document.querySelector(".navbar__right");

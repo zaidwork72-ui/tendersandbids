@@ -2,7 +2,7 @@
 
 const homepageData = {
   navLinks: [
-    { label: "Tenders", href: "#", hasChevron: true },
+    { label: "Tenders", href: "/pages/tenders/tenderlisting.html", hasChevron: true },
     { label: "About us", href: "#" },
     { label: "Blogs", href: "#" },
     { label: "Contact us", href: "#" }
@@ -12,29 +12,65 @@ const homepageData = {
     { icon: "globe", label: "Global coverage" },
     { icon: "unlock", label: "No subscription required" },
     { icon: "layers", label: "Relevant opportunities" },
-    { icon: "verified", label: "Built for action" }
+    { icon: "action", label: "Built for action" }
   ],
   steps: [
     {
       number: "01",
-      title: "Discover",
-      text: "Describe what you're looking for in plain language. Our AI interprets your intent and maps it to the right opportunities across global markets."
+      icon: "search",
+      title: "Search & Refine",
+      text: "Find tenders matching your requirements."
     },
     {
       number: "02",
-      title: "Evaluate",
-      text: "See key information before committing: buyer, location, scope, value, and deadline. Understand whether an opportunity is worth pursuing."
+      icon: "save",
+      title: "Register & save",
+      text: "Save searches and preferences for later."
     },
     {
       number: "03",
-      title: "Access",
-      text: "When you decide an opportunity is worth pursuing, use 1 credit to access the complete tender document. No subscription required."
+      icon: "recieve",
+      title: "Receive tenders",
+      text: "Get relevant opportunities as they're published."
     },
     {
       number: "04",
-      title: "Act",
-      text: "Download, share, and track. Set alerts for similar opportunities. Build your pipeline of relevant procurement opportunities."
+      icon: "eye",
+      title: "Access",
+      text: "Use credits to access full tender information."
+    },
+    {
+      number: "05",
+      icon: "action0",
+      title: "No subscription required",
+      text: "Pay only for the tenders you choose to access."
     }
+  ],
+  why: [
+    {
+      number: "01",
+      icon: "trending",
+      title: "Fresh opportunities",
+      text: "Access newly published tenders and RFPs from procurement sources worldwide."
+    },
+    {
+      number: "02",
+      icon: "fileSearch",
+      title: "Evaluate opportunities",
+      text: "See key information such as buyer, location, scope, value and deadline before spending a credit."
+    },
+    {
+      number: "03",
+      icon: "lockKey",
+      title: "Pay only when you need",
+      text: "Access full tender information for just $1. No annual subscription or long-term commitment."
+    },
+    {
+      number: "04",
+      icon: "multiple",
+      title: "Built for action",
+      text: "Download, share and track opportunities. Set alerts for similar tenders and build your procurement pipeline."
+    },
   ],
   regions: [
     { name: "Europe", count: "3,842 opportunities" },
@@ -151,3 +187,33 @@ const locationData = [
     more: "+4 more"
   }
 ]
+
+const tenderListingPage = {
+  activeFilter: [
+    {
+      name: "Medical Equipment",
+      icons: "blueX",
+      active: true
+    },
+    {
+      name: "Germany",
+      icons: "blueX",
+      active: true
+    },
+    {
+      name: "Government Buyers",
+      icons: "blueX",
+      active: true
+    },
+    {
+      name: "All Values",
+      icons: "greyX",
+      active: false
+    },
+    {
+      name: "All Deadlines",
+      icons: "greyX",
+      active: false
+    },
+  ]
+}
