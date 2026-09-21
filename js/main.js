@@ -212,18 +212,21 @@ document.addEventListener("DOMContentLoaded", () => {
 function renderActiveFilters() {
   const wrap = document.getElementById("active-filter");
   if (!wrap) return;
+
   wrap.innerHTML = `
     <span class="label">Active filter mapping:</span>
+
     ${tenderListingPage.activeFilter
       .map(
         (f) => `
-      <span class="filter-tag ${f.active ? "active" : "inactive"}">
-        ${f.name}
-        <button type="button" aria-label="Remove ${f.name}">
-          ${f.active ? icons.closeBlue : icons.closeGrey}
-        </button>
-      </span>
-    `
+          <span class="filter-tag ${f.active ? "active" : "inactive"}">
+            ${f.name}
+
+            <button type="button" aria-label="Remove ${f.name}">
+              ${f.active ? icons.blueX : icons.greyX}
+            </button>
+          </span>
+        `
       )
       .join("")}
   `;
@@ -271,34 +274,60 @@ function renderResultsHeader() {
 function renderTenderCards() {
   renderList("tender-list", tenderListingPage.tenders, (t) => `
     <article class="tender-card">
+
+      <!-- Top section -->
       <div class="tender-card-top">
-        <div>
+
+        <!-- Left content -->
+        <div class="tender-card-left">
+
           <div class="tender-meta-line">
             <span class="flag">${t.flag}</span>
             <span>${t.country}</span>
-            <span class="sep">|</span>
+            
             <span class="tag-pill">${t.type}</span>
             <span>${t.industry}</span>
             ${badgeTemplate(t)}
           </div>
+
           <h3 class="tender-title">${t.title}</h3>
+
           <p class="tender-buyer">${t.buyer}</p>
+
+          <p class="tender-desc">${t.desc}</p>
+
         </div>
-        <div>
+
+        <!-- Right content -->
+        <div class="tender-card-right">
+
           <div class="tender-value">${t.value}</div>
-          <div class="tender-closes ${t.urgent ? "urgent" : ""}">Closes ${t.closes}</div>
+
+          <div class="tender-closes ${t.urgent ? "urgent" : ""}">
+            Closes ${t.closes}
+          </div>
+
+          <div class="tender-actions">
+            <button class="icon-btn" aria-label="Save tender">
+              ${icons.favourite}
+            </button>
+
+            <button class="btn-view">
+              View ${icons.viewArrow}
+            </button>
+          </div>
+
         </div>
+
       </div>
 
-      <p class="tender-desc">${t.desc}</p>
-
+      <!-- Bottom section -->
       <div class="tender-card-bottom">
-        <span class="tender-ref">REF: ${t.ref} &nbsp;·&nbsp; Published ${t.published}</span>
-        <div class="tender-actions">
-          <button class="icon-btn" aria-label="Save tender">${icons.star}</button>
-          <button class="btn-view">View ${icons.view}</button>
-        </div>
+        <span class="tender-ref">
+          REF: ${t.ref} &nbsp;·&nbsp; Published ${t.published}
+        </span>
       </div>
+
     </article>
   `);
 }

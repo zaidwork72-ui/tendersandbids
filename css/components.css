@@ -694,30 +694,29 @@
   align-items:center;
   flex-wrap:wrap;
   gap:10px;
-  font-size: 12.5px;
+  font-size: 11px;
 }
 .active-filter .label{
-  color: var(--text-faint);
-  letter-spacing:.06em;
+  color: var(--login-input);
   text-transform:uppercase;
-  font-size:11.5px;
-  margin-right:2px;
+  font-size:11px;
+  font-weight: 600;
 }
 .filter-tag{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:6px 10px;
-  border-radius: var(--radius-s);
-  font-size:12.5px;
+  gap:var(--space-4);
+  padding: var(--space-4) var(--space-10);
+  border-radius: 4px;
+  font-size:12px;
   font-weight:600;
-  letter-spacing:.02em;
   border:1px solid transparent;
 }
 .filter-tag.active{
-  background: var(--blue-soft);
-  color: #8fb1fb;
-  border-color: rgba(59,114,246,0.35);
+  background: rgba(59, 114, 246, 0.11);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  text-transform: uppercase;
 }
 .filter-tag.inactive{
   background: var(--surface-2);
@@ -730,32 +729,62 @@
   display:flex;
   color: inherit;
   opacity:.75;
+  padding: 0;
 }
 .filter-tag button:hover{ opacity:1; }
 
 /* --- Sidebar filter groups --- */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
+.textTitle{
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 400;
+    font-size: 12px;
+    font-family: var(--font-mono);
+}
+
 .filter-block{
   border-bottom:1px solid var(--border-soft);
-  padding: 20px 0;
+  padding-top: var(--space-24);
 }
-.filter-block:first-child{ padding-top:0; }
+.filter-block:first-child{ 
+    padding-top:0; 
+}
+
+.filterssss{
+    padding-top: var(--space-10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.filterssss .region-filters{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
 .filter-block-title{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  font-size:11.5px;
+  font-size:11px;
   letter-spacing:.1em;
   color: var(--text-faint);
   text-transform:uppercase;
-  font-weight:600;
-  margin-bottom:14px;
+  font-weight:400;
   cursor:pointer;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--border);
 }
 .checkbox-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:6px 0;
   font-size:14px;
   color: var(--text-dim);
   cursor:pointer;
@@ -784,10 +813,10 @@
   align-items:center;
   justify-content:space-between;
   gap:16px;
-  background: var(--blue-soft);
-  border:1px solid rgba(59,114,246,0.3);
-  border-radius: var(--radius-m);
-  padding:14px 18px;
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: var(--radius-3);
+  padding:var(--space-12) var(--space-16);
   color:#c3d5fd;
   font-size:14px;
   margin-bottom:20px;
@@ -797,15 +826,17 @@
   align-items:center;
   gap:10px;
 }
+
 .btn-outline-blue{
   background:transparent;
-  border:1px solid var(--blue);
-  color:#9cbcfb;
-  padding:8px 16px;
-  border-radius: var(--radius-s);
-  font-size:13.5px;
-  font-weight:600;
+  border:1px solid var(--border);
+  color:var(--text-muted);
+  padding:5px var(--space-10);
+  border-radius: var(--radius-3);
+  font-size:12px;
+  font-weight:400;
   white-space:nowrap;
+  font-family: var(--font-ui);
 }
 .btn-outline-blue:hover{ background: rgba(59,114,246,0.12); }
 
@@ -813,122 +844,211 @@
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:5px;
-  padding:3px 9px;
-  border-radius: 20px;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.03em;
+  gap:var(--space-4);
+  padding: var(--space-2) var(--space-8);
+  border-radius: var(--radius-xs);
+  font-size:10px;
+  font-weight:400;
   text-transform:uppercase;
 }
-.badge .dot{ width:6px; height:6px; border-radius:50%; }
-.badge.open{ background: rgba(51,207,138,0.12); color: var(--green); }
-.badge.open .dot{ background: var(--green); }
-.badge.closing{ background: rgba(230,168,58,0.12); color: var(--amber); }
-.badge.closing .dot{ background: var(--amber); }
+.badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge.open {
+    background: rgba(29, 185, 122, 0.1);
+    color: rgba(29, 185, 122, 1);
+    border: 1px solid rgba(29, 185, 122, 0.1);
+}
+
+.badge.open .dot {
+    background: rgba(29, 185, 122, 1);
+}
+
+.badge.closing {
+    background: #E8972A1F;
+    color: #E8972A;
+    border: 1px solid #E8972A4D;
+}
+
+.badge.closing .dot {
+    background: #E8972A;
+}
 
 .tag-pill{
-  font-size:11.5px;
-  font-weight:600;
-  letter-spacing:.03em;
-  color: var(--text-faint);
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:.03em;;
   text-transform:uppercase;
 }
 
 /* --- Tender card --- */
 .tender-card{
-  border:1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border);
   border-radius: var(--radius-l);
-  background: var(--surface);
-  padding: 22px 24px;
-  margin-bottom:16px;
+  background: transparent;
+  padding: var(--space-20) var(--space-24);
   transition: border-color .15s ease;
 }
-.tender-card:hover{ border-color: var(--border); }
+
+.tender-list .tender-card:last-child{
+    border-bottom: none;
+}
+
+.tender-card:hover{
+  border-color: var(--border);
+}
+
+/* --- Top section --- */
 .tender-card-top{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap:16px;
+  gap:32px;
 }
+
+/* --- Left section --- */
+.tender-card-left{
+  flex:1;
+  min-width:0;
+}
+
+/* --- Right section --- */
+.tender-card-right{
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  min-width:180px;
+}
+
+/* --- Meta --- */
 .tender-meta-line{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-size:13px;
-  color: var(--text-dim);
-  margin-bottom:10px;
+  gap:var(--space-8);
+  font-size:12px;
+  color:rgba(80, 86, 111, 1);
+  font-weight: 400;
+  margin-bottom: var(--space-6);
 }
-.tender-meta-line .flag{ font-size:15px; }
-.tender-meta-line .sep{ color: var(--border); }
+
+.tender-meta-line .flag{
+  font-size:15px;
+}
+
+.tender-meta-line .sep{
+  color:var(--border);
+}
+
+
+/* --- Title --- */
+.tender-title{
+  font-size:16px;
+  font-weight:500;
+  font-family: var(--font-ui);
+  color: var(--text);
+}
+
+/* --- Buyer --- */
+.tender-buyer{
+  font-size:13px;
+  font-weight: 400;
+  font-family: var(--font-ui);
+  color:var(--text-muted);
+  padding-top: var(--space-6);
+}
+
+/* --- Description --- */
+.tender-desc{
+  font-size:13px;
+  color:var(--text-faint);
+  line-height:1.55;
+  font-family: var(--font-ui);
+  padding-top: var(--space-8);
+}
+
+/* --- Value --- */
 .tender-value{
   text-align:right;
-  font-weight:700;
-  font-size:16px;
+  font-weight:500;
+  font-size:14px;
   white-space:nowrap;
+  font-family: var(--font-mono);
+  color: var(--text);
 }
+
+/* --- Closing date --- */
 .tender-closes{
   text-align:right;
-  font-size:12.5px;
-  color: var(--text-faint);
-  margin-top:2px;
-}
-.tender-closes.urgent{ color: var(--amber); }
-.tender-title{
-  font-size:17px;
-  font-weight:600;
-  margin: 2px 0 6px;
-}
-.tender-title:hover{ color: var(--blue); cursor:pointer; }
-.tender-buyer{
-  font-size:13.5px;
-  color: var(--text-dim);
-  margin-bottom:10px;
-}
-.tender-desc{
-  font-size:13.8px;
-  color: var(--text-dim);
-  line-height:1.55;
-  max-width: 760px;
-  margin-bottom:16px;
-}
-.tender-card-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-top: 1px dashed var(--border-soft);
-  padding-top:14px;
-}
-.tender-ref{
-  font-family: var(--mono);
   font-size:12px;
-  color: var(--text-faint);
-  letter-spacing:.02em;
+  color:var(--text-faint);
+  margin-top:var(--space-4);
+  font-family: var(--font-mono);
 }
+
+.tender-closes.urgent{
+  color:var(--amber);
+}
+
+/* --- Actions --- */
 .tender-actions{
   display:flex;
   align-items:center;
   gap:10px;
+  margin-top:18px;
 }
+
 .icon-btn{
-  width:36px; height:36px;
-  display:flex; align-items:center; justify-content:center;
+  padding: 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border:1px solid var(--border);
-  border-radius: var(--radius-s);
-  background: var(--surface-2);
-  color: var(--text-dim);
+  border-radius:var(--radius-3);
 }
-.icon-btn:hover{ color: var(--amber); border-color: var(--amber); }
+
+.icon-btn:hover{
+  color:var(--amber);
+  border-color:var(--amber);
+}
+
 .btn-view{
   display:flex;
   align-items:center;
   gap:6px;
   border:1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text);
-  padding:8px 16px;
-  border-radius: var(--radius-s);
-  font-size:13.5px;
-  font-weight:600;
+  background:var(--surface-2);
+  color:var(--text-muted);
+  padding:5px var(--space-12);
+  border-radius:var(--radius-s);
+  font-size:12px;
+  font-weight:400;
+  font-family: var(--font-ui);
 }
-.btn-view:hover{ border-color: var(--blue); color:#9cbcfb; }
+
+.btn-view:hover{
+  border-color:var(--blue);
+  color:#9cbcfb;
+}
+
+/* --- Bottom section --- */
+.tender-card-bottom{
+  display:flex;
+  align-items:center;
+  border-top:1px solid var(--border-inner);
+  padding-top:var(--space-10);
+  margin-top:var(--space-10);
+}
+
+.tender-ref{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--text-faint);
+  letter-spacing:.02em;
+}

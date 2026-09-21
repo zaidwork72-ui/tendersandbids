@@ -123,6 +123,7 @@ a {
     --radius-sm: 4px;
     --radius-md: 6px;
     --radius-8: 8px;
+    --radius-3: 3px;
 
     --content: 1240px;
     --header-pad-x: var(--space-100);

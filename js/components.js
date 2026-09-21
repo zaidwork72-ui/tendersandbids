@@ -93,7 +93,9 @@ fileSearch: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/20
 lockKey: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" stroke="#9BA2BB" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 10H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2ZM7 10V7a5 5 0 1 1 10 0v3" stroke="#9BA2BB" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 multiple: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m12 15 2 2 4-4" stroke="#9BA2BB" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 8H10a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z" stroke="#9BA2BB" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" stroke="#9BA2BB" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 blueX: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12" stroke="#3B72F6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-greyX: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12" stroke="#94A3B8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+greyX: '<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12" stroke="#94A3B8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+favourite:'<svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m6.995 1.499 1.65 3.348 3.697.54-2.678 2.608.63 3.687-3.299-1.938-3.297 1.739.63-3.688-2.68-2.409 3.698-.54L6.996 1.5Z" stroke="#50566F" stroke-width="1.199" stroke-linejoin="round"/></svg>',
+viewArrow: '<svg width="9" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.952 7.636-.657-.647 2.702-2.702H0v-.938h6.997L4.295.656 4.952 0 8.77 3.818 4.952 7.636Z" fill="#8D95B0"/></svg>'
 };
 
 function renderNavbar() {
