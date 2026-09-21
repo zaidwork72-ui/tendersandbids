@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenders Listing</title>
+    <title>Tenders Listing · Tenders&amp;Bids</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="../../assets/logos/navbar-logo.png">
@@ -18,20 +18,108 @@
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="main-search shell">
-            <div class="input search-input">
+        <section class="main-search">
+            <div class="main-shell shell">
+                <div class="search-input">
                 <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m15 15-2.893-2.893m1.56-3.774A5.333 5.333 0 1 1 3 8.333a5.333 5.333 0 0 1 10.667 0Z" stroke="#3B72F6" stroke-width="2" stroke-linecap="round"/></svg>
 
-                <input type="text" placeholder="Medical equipment government tenders in Germany">
+                <input type="text" value="Medical equipment government tenders in Germany">
 
-                <button type="button" class="clear-search" aria-label="Clear search">
-                    <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><g clip-path="url(#b)"><path d="m8.625 5.375-3.25 3.25m0-3.25 3.25 3.25M12.417 7A5.417 5.417 0 1 1 1.583 7a5.417 5.417 0 0 1 10.834 0Z" stroke="#64748B" stroke-width="2" stroke-linecap="round"/></g></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath><clipPath id="b"><path fill="#fff" transform="translate(.5 .5)" d="M0 0h13v13H0z"/></clipPath></defs></svg>
-                </button>
+<button type="button" class="clear-search" aria-label="Clear search">
+    Clear
+
+    <svg
+        width="14"
+        height="14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <g clip-path="url(#a)">
+            <g clip-path="url(#b)">
+                <path
+                    d="m8.625 5.375-3.25 3.25m0-3.25 3.25 3.25M12.417 7A5.417 5.417 0 1 1 1.583 7a5.417 5.417 0 0 1 10.834 0Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+            </g>
+        </g>
+        <defs>
+            <clipPath id="a">
+                <path fill="#fff" d="M0 0h14v14H0z"/>
+            </clipPath>
+            <clipPath id="b">
+                <path fill="#fff" transform="translate(.5 .5)" d="M0 0h13v13H0z"/>
+            </clipPath>
+        </defs>
+    </svg>
+</button>
             </div>
+
             <div class="active-filter" id="active-filter"></div>
+            </div>
+        </section>
+
+        <section class="listing-shell shell">
+            <!-- ===== Sidebar ===== -->
+            <aside class="sidebar">
+                <div class="top-checkbox">
+                    <input type="checkbox" id="closing-30" />
+                    <label for="closing-30">Closing within 30 days</label>
+                </div>
+
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <span>Region</span>
+                        <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div id="region-filters"></div>
+                </div>
+
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <span>Industry</span>
+                        <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div id="industry-filters"></div>
+                </div>
+
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <span>Tender Type</span>
+                        <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div id="tender-type-filters"></div>
+                </div>
+            </aside>
+
+            <!-- ===== Results ===== -->
+            <div class="results">
+                <div class="results-header">
+                    <span class="results-count" id="results-count"></span>
+                    <div class="sort-control">
+                        <span>Sort by:</span>
+                        <select>
+                            <option>Relevance</option>
+                            <option>Newest</option>
+                            <option>Closing soon</option>
+                            <option>Value: High to low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="save-banner">
+                    <span class="left">ⓘ Save this search and receive alerts when new matching opportunities are published.</span>
+                    <button class="btn-outline-blue">Save search + alerts</button>
+                </div>
+
+                <div class="tender-list" id="tender-list"></div>
+            </div>
         </section>
     </main>
+
     <div id="site-footer"></div>
 
     <script src="../../js/data.js"></script>

@@ -46,7 +46,8 @@ if (heroSection) {
     });
 }
 
-document.querySelector(".search-bar__icon").innerHTML = icons.search;
+const searchIcon = document.querySelector(".search-bar__icon");
+if (searchIcon) searchIcon.innerHTML = icons.search;
 
 renderList("trust-badges", homepageData.trustBadges, (item) => `
     <div class="trust-item">
@@ -190,4 +191,132 @@ if (counter) {
     }
 
     requestAnimationFrame(animateCounter);
+}
+
+
+// ===== Page init ===== //
+
+document.addEventListener("DOMContentLoaded", () => {
+//   renderHeader();
+//   renderFooter();
+
+  renderActiveFilters();
+  renderSidebarFilters();
+  renderResultsHeader();
+  renderTenderCards();
+
+  bindSearchClear();
+});
+
+// --- Active filter tags (blue = active, grey = inactive) ---
+function renderActiveFilters() {
+  const wrap = document.getElementById("active-filter");
+  if (!wrap) return;
+  wrap.innerHTML = `
+    <span class="label">Active filter mapping:</span>
+    ${tenderListingPage.activeFilter
+      .map(
+        (f) => `
+      <span class="filter-tag ${f.active ? "active" : "inactive"}">
+        ${f.name}
+        <button type="button" aria-label="Remove ${f.name}">
+          ${f.active ? icons.closeBlue : icons.closeGrey}
+        </button>
+      </span>
+    `
+      )
+      .join("")}
+  `;
+}
+
+// --- Sidebar: region / industry / tender type checkboxes ---
+function renderSidebarFilters() {
+  renderList("region-filters", tenderListingPage.regions, (item) => `
+    <label class="checkbox-row">
+      <span class="left">
+        <input type="checkbox" />
+        <span>${item.name}</span>
+      </span>
+      <span class="count">${item.count}</span>
+    </label>
+  `);
+
+  renderList("industry-filters", tenderListingPage.industries, (item) => `
+    <label class="checkbox-row">
+      <span class="left">
+        <input type="checkbox" checked />
+        <span>${item.name}</span>
+      </span>
+      <span class="count">${item.count}</span>
+    </label>
+  `);
+
+  renderList("tender-type-filters", tenderListingPage.tenderTypes, (item) => `
+    <label class="checkbox-row">
+      <span class="left">
+        <input type="checkbox" />
+        <span>${item.name}</span>
+      </span>
+    </label>
+  `);
+}
+
+// --- Results count ---
+function renderResultsHeader() {
+  const el = document.getElementById("results-count");
+  if (el) el.textContent = `${tenderListingPage.resultsCount.toLocaleString()} opportunities found`;
+}
+
+// --- Tender cards ---
+function renderTenderCards() {
+  renderList("tender-list", tenderListingPage.tenders, (t) => `
+    <article class="tender-card">
+      <div class="tender-card-top">
+        <div>
+          <div class="tender-meta-line">
+            <span class="flag">${t.flag}</span>
+            <span>${t.country}</span>
+            <span class="sep">|</span>
+            <span class="tag-pill">${t.type}</span>
+            <span>${t.industry}</span>
+            ${badgeTemplate(t)}
+          </div>
+          <h3 class="tender-title">${t.title}</h3>
+          <p class="tender-buyer">${t.buyer}</p>
+        </div>
+        <div>
+          <div class="tender-value">${t.value}</div>
+          <div class="tender-closes ${t.urgent ? "urgent" : ""}">Closes ${t.closes}</div>
+        </div>
+      </div>
+
+      <p class="tender-desc">${t.desc}</p>
+
+      <div class="tender-card-bottom">
+        <span class="tender-ref">REF: ${t.ref} &nbsp;·&nbsp; Published ${t.published}</span>
+        <div class="tender-actions">
+          <button class="icon-btn" aria-label="Save tender">${icons.star}</button>
+          <button class="btn-view">View ${icons.view}</button>
+        </div>
+      </div>
+    </article>
+  `);
+}
+
+function badgeTemplate(t) {
+  if (t.status === "open") {
+    return `<span class="badge open"><span class="dot"></span>OPEN</span>`;
+  }
+  return `<span class="badge closing"><span class="dot"></span>CLOSING ${t.closingIn}</span>`;
+}
+
+// --- Search bar clear button ---
+function bindSearchClear() {
+  const input = document.querySelector(".search-input input");
+  const clearBtn = document.querySelector(".clear-search");
+  if (!input || !clearBtn) return;
+  clearBtn.addEventListener("click", () => {
+    input.value = "";
+    input.focus();
+  });
 }
