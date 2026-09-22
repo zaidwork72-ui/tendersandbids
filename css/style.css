@@ -435,7 +435,7 @@
 .pricing-card__body {
     display: flex;
     flex-direction: column;
-    gap: var(--space-24);
+    gap: var(--space-20);
 }
 
 .wallet-box {

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/responsive.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tender-listing-patch.css">
 </head>
 
 <body>
@@ -73,7 +74,7 @@
                     <label for="closing-30">Closing within 30 days</label>
                 </div>
 
-                <div class="filter-block">
+                <div class="filter-block" data-filter-block="region">
                     <div class="filter-block-title">
                         <span>Region</span>
                         <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -83,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="filter-block">
+                <div class="filter-block" data-filter-block="industry">
                     <div class="filter-block-title">
                         <span>Industry</span>
                         <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -94,7 +95,7 @@
                     
                 </div>
 
-                <div class="filter-block">
+                <div class="filter-block" data-filter-block="type">
                     <div class="filter-block-title">
                         <span>Tender Type</span>
                         <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -112,12 +113,17 @@
                     <span class="results-count" id="results-count"></span>
                     <div class="sort-control">
                         <span>Sort by:</span>
-                        <select>
-                            <option>Relevance</option>
-                            <option>Newest</option>
-                            <option>Closing soon</option>
-                            <option>Value: High to low</option>
-                        </select>
+                        <div class="custom-select">
+                            <select>
+                                <option>Relevance</option>
+                                <option>Newest</option>
+                                <option>Closing soon</option>
+                                <option>Value: High to low</option>
+                            </select>
+                            <span class="select-chevron" aria-hidden="true">
+                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3 4.5 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -128,6 +134,8 @@
                 </div>
 
                 <div class="tender-list" id="tender-list"></div>
+
+                <div class="results-footer" id="results-footer"></div>
             </div>
         </section>
     </main>

@@ -1052,3 +1052,188 @@
   color:var(--text-faint);
   letter-spacing:.02em;
 }
+
+
+/* =========================================================
+   Tender Listing — additive patch styles
+   Load this AFTER components.css (see the new <link> in
+   tenderlisting.html). Existing classes/colors/spacing in
+   components.css are left untouched.
+   ========================================================= */
+
+/* --- 5. Sort by dropdown: chevron pinned inside, right-aligned --- */
+.sort-control .custom-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sort-control .custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: var(--surface-2);
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: var(--radius-s);
+  outline: none;
+  padding: 4px 22px 4px 8px;
+  cursor: pointer;
+}
+
+.sort-control .select-chevron {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  pointer-events: none;
+  color: var(--primary);
+}
+
+/* --- 3. Filter block collapse/expand icon rotation --- */
+.filter-block-title svg {
+  transition: transform 0.15s ease;
+}
+
+.filter-block.is-collapsed .filter-block-title svg {
+  transform: rotate(-90deg);
+}
+
+/* --- 2. No-results empty state --- */
+.tender-empty-state {
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.tender-empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tender-empty-text {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+/* --- 4. Results info + pagination footer --- */
+.results-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: var(--space-16) var(--space-16);
+}
+
+.results-info {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: var(--font-ui);
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--blue);
+  color: #9cbcfb;
+}
+
+.page-btn.page-num {
+  padding: 6px 10px;
+  min-width: 32px;
+  text-align: center;
+}
+
+.page-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-ellipsis {
+  color: var(--text-faint);
+  font-size: 12px;
+  padding: 0 4px;
+}
+
+/* --- 6. Independent scroll for sidebar and results (desktop only) ---
+   Actual pixel height is set inline by syncListingPanelHeights() in
+   main.js (it depends on each panel's rendered top offset, which CSS
+   alone can't know). overscroll-behavior: contain stops a scroll that
+   hits the top/bottom of one panel from "leaking" into the other panel
+   or the page — this is what was making both feel like they scrolled
+   together. */
+@media (min-width: 993px) {
+  .listing-shell {
+    align-items: start;
+  }
+
+  .sidebar,
+  .results {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 4px;
+  }
+}
+
+/* --- Custom scrollbar for the independently-scrolling panels ---
+   Thin, rounded, and colored from the existing design tokens instead
+   of the browser default. Firefox uses the two scrollbar-* props;
+   WebKit/Chromium/Edge/Safari use the ::-webkit-scrollbar-* rules. */
+.sidebar,
+.results {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.sidebar::-webkit-scrollbar,
+.results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.results::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 999px;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb,
+.results:hover::-webkit-scrollbar-thumb {
+  background-color: var(--text-faint);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.results::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
