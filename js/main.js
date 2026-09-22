@@ -490,7 +490,7 @@ function renderTenderCards(items) {
         <div class="tender-card-left">
 
           <div class="tender-meta-line">
-            <span class="flag">${t.flag}</span>
+            <span class="flag">${icons[t.flag]}</span>
             <span>${t.country}</span>
             
             <span class="tag-pill">${t.type}</span>

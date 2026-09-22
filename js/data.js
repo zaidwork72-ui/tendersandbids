@@ -231,7 +231,7 @@ const tenderListingPage = {
 
   tenders: [
     {
-      flag: "🇩🇪", country: "Germany", type: "SUPPLY", industry: "Healthcare",
+      flag: "germany", country: "Germany", type: "SUPPLY", industry: "Healthcare",
       status: "open", value: "EUR 2.4M", closes: "2025-02-15", urgent: false,
       title: "Supply and Installation of Medical Imaging Equipment — MRI and CT Systems",
       buyer: "Bundesministerium für Gesundheit · Berlin",
@@ -239,7 +239,7 @@ const tenderListingPage = {
       ref: "BMG/2024/MED/4821", published: "2024-12-18",
     },
     {
-      flag: "🇦🇪", country: "United Arab Emirates", type: "WORKS", industry: "Information Technology",
+      flag: "uae", country: "United Arab Emirates", type: "WORKS", industry: "Information Technology",
       status: "open", value: "USD 23.1M", closes: "2025-03-10", urgent: false,
       title: "Smart City Digital Infrastructure Programme — Phase II",
       buyer: "Dubai Municipality · Dubai",
@@ -247,7 +247,7 @@ const tenderListingPage = {
       ref: "DM/ICT0/2024/0934", published: "2024-12-20",
     },
     {
-      flag: "🇬🇧", country: "United Kingdom", type: "SERVICES", industry: "Information Technology",
+      flag: "uk", country: "United Kingdom", type: "SERVICES", industry: "Information Technology",
       status: "closing", closingIn: "10D", value: "GBP 5.1M", closes: "2025-01-28", urgent: true,
       title: "Enterprise Tax Management Software — Licensing and Support Services",
       buyer: "HM Revenue & Customs · London",
@@ -255,7 +255,7 @@ const tenderListingPage = {
       ref: "HMRC/ICT/2024/7702", published: "2024-12-15",
     },
     {
-      flag: "🇸🇦", country: "Saudi Arabia", type: "WORKS", industry: "Energy",
+      flag: "saudi", country: "Saudi Arabia", type: "WORKS", industry: "Energy",
       status: "open", value: "USD 49.3M", closes: "2025-03-20", urgent: false,
       title: "Solar PV Power Generation Facility — 50MW Grid-Connected",
       buyer: "NEOM Company · Tabuk",
@@ -263,7 +263,7 @@ const tenderListingPage = {
       ref: "NEOM/ENG/2024/2250", published: "2024-12-10",
     },
     {
-      flag: "🇦🇺", country: "Australia", type: "FRAMEWORK", industry: "Defence & Security",
+      flag: "australia", country: "Australia", type: "FRAMEWORK", industry: "Defence & Security",
       status: "closing", closingIn: "4D", value: "AUD 8.9M", closes: "2025-01-22", urgent: true,
       title: "Protective and Safety Equipment — National Standing Offer",
       buyer: "Department of Defence · Canberra",
@@ -271,7 +271,7 @@ const tenderListingPage = {
       ref: "CASG/EQ/2024/3318", published: "2024-12-22",
     },
     {
-      flag: "🇨🇦", country: "Canada", type: "SERVICES", industry: "Information Technology",
+      flag: "canada", country: "Canada", type: "SERVICES", industry: "Information Technology",
       status: "open", value: "CAD 12M", closes: "2025-02-08", urgent: false,
       title: "Cloud Computing and Managed Infrastructure Services",
       buyer: "Shared Services Canada · Ottawa",
@@ -279,7 +279,7 @@ const tenderListingPage = {
       ref: "SSC/ICT/2024/5590", published: "2024-12-17",
     },
     {
-      flag: "🇿🇦", country: "South Africa", type: "WORKS", industry: "Water & Utilities",
+      flag: "sa", country: "South Africa", type: "WORKS", industry: "Water & Utilities",
       status: "open", value: "USD 26M", closes: "2025-03-01", urgent: false,
       title: "Bulk Water Treatment Plant — Upgrade and Expansion",
       buyer: "eThekwini Metropolitan Municipality · Durban",
@@ -287,7 +287,7 @@ const tenderListingPage = {
       ref: "ETM/WS/2024/8841", published: "2024-12-05",
     },
     {
-      flag: "🇳🇱", country: "Netherlands", type: "CONSULTING", industry: "Information Technology",
+      flag: "netherlands", country: "Netherlands", type: "CONSULTING", industry: "Information Technology",
       status: "closing", closingIn: "13D", value: "EUR 890K", closes: "2025-01-31", urgent: true,
       title: "Cybersecurity Assessment and Penetration Testing Services",
       buyer: "Ministerie van Justitie en Veiligheid · The Hague",
@@ -295,7 +295,7 @@ const tenderListingPage = {
       ref: "MJV/ICT/2024/6650", published: "2024-12-19",
     },
     {
-      flag: "🇸🇬", country: "Singapore", type: "SERVICES", industry: "Logistics & Transport",
+      flag: "singapore", country: "Singapore", type: "SERVICES", industry: "Logistics & Transport",
       status: "open", value: "SGD 31.5M", closes: "2025-04-05", urgent: false,
       title: "Port Logistics Automation — Terminal Operating System Upgrade",
       buyer: "Maritime and Port Authority of Singapore · Singapore",
@@ -303,7 +303,7 @@ const tenderListingPage = {
       ref: "MPA/IT/2024/1182", published: "2024-12-12",
     },
     {
-      flag: "🇧🇷", country: "Brazil", type: "SUPPLY", industry: "Healthcare",
+      flag: "brazil", country: "Brazil", type: "SUPPLY", industry: "Healthcare",
       status: "open", value: "USD 9.7M", closes: "2025-02-20", urgent: false,
       title: "National Immunisation Programme — Vaccine Cold Chain Equipment",
       buyer: "Ministério da Saúde · Brasília",

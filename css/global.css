@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,300&family=Instrument+Serif&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 *,
 *::before,
@@ -102,6 +102,7 @@ a {
     --font-mono: "JetBrains Mono", monospace;
     --font-ui: Inter, "IBM Plex Sans", sans-serif;
     --font-serif: "Instrument Serif", serif;
+    --font-geist: "Geist", sans-serif;
 
     --space-2: 2px;
     --space-4: 4px;

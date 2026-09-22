@@ -66,15 +66,17 @@
     padding: var(--space-6) 14px;
     border-radius: var(--radius-sm);
     font-size: 14px;
-    line-height: 22.4px;
+    /* line-height: 22.4px; */
     font-weight: 500;
     color: var(--text-muted);
 }
 
 .nav-link__chevron {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     color: var(--text-muted);
     font-size: 16px;
+    padding-top: 1.5px !important;
 }
 
 .nav-toggle {
@@ -702,6 +704,8 @@
   font-size:11px;
   font-weight: 600;
 }
+
+
 .filter-tag{
   display:inline-flex;
   align-items:center;
@@ -711,6 +715,7 @@
   font-size:12px;
   font-weight:600;
   border:1px solid transparent;
+  font-family: var(--font-mono);
 }
 .filter-tag.active{
   background: rgba(59, 114, 246, 0.11);
@@ -722,6 +727,7 @@
   background: var(--surface-2);
   color: var(--text-faint);
   border-color: var(--border);
+  text-transform: uppercase;
 }
 .filter-tag button{
   background:transparent;
@@ -894,6 +900,7 @@
   background: transparent;
   padding: var(--space-20) var(--space-24);
   transition: border-color .15s ease;
+  cursor: pointer;
 }
 
 .tender-list .tender-card:last-child{
@@ -970,7 +977,7 @@
   color:var(--text-faint);
   line-height:1.55;
   font-family: var(--font-ui);
-  padding-top: var(--space-8);
+  padding-top: var(--space-16);
 }
 
 /* --- Value --- */
@@ -1189,18 +1196,7 @@
    hits the top/bottom of one panel from "leaking" into the other panel
    or the page — this is what was making both feel like they scrolled
    together. */
-@media (min-width: 993px) {
-  .listing-shell {
-    align-items: start;
-  }
 
-  .sidebar,
-  .results {
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding-right: 4px;
-  }
-}
 
 /* --- Custom scrollbar for the independently-scrolling panels ---
    Thin, rounded, and colored from the existing design tokens instead
