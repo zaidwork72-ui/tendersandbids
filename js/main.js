@@ -659,6 +659,322 @@ function bindClosing30Filter() {
     });
 }
 
+// =========================================================
+// Mobile Filter Bottom Sheet
+// =========================================================
+
+function renderMobileFilterOptions() {
+
+    const regionRoot = document.getElementById("mobile-region-filters");
+    const industryRoot = document.getElementById("mobile-industry-filters");
+    const typeRoot = document.getElementById("mobile-type-filters");
+
+    if (!regionRoot || !industryRoot || !typeRoot) return;
+
+
+    // -----------------------------------------------------
+    // Region
+    // -----------------------------------------------------
+    regionRoot.innerHTML = tenderListingPage.regions.map((item) => `
+        <label class="mobile-filter-option">
+            <span class="mobile-filter-option__left">
+                <input
+                    type="checkbox"
+                    data-mobile-group="region"
+                    value="${item.name}"
+                    ${listingState.filters.region.has(item.name) ? "checked" : ""}
+                >
+                <span>${item.name}</span>
+            </span>
+            <span class="mobile-filter-option__count">
+                ${item.count}
+            </span>
+        </label>
+    `).join("");
+
+    industryRoot.innerHTML = tenderListingPage.industries.map((item) => `
+        <label class="mobile-filter-option">
+            <span class="mobile-filter-option__left">
+                <input
+                    type="checkbox"
+                    data-mobile-group="industry"
+                    value="${item.name}"
+                    ${listingState.filters.industry.has(item.name) ? "checked" : ""}
+                >
+                <span>${item.name}</span>
+            </span>
+            <span class="mobile-filter-option__count">
+                ${item.count}
+            </span>
+        </label>
+    `).join("");
+
+    typeRoot.innerHTML = tenderListingPage.tenderTypes.map((item) => {
+        const value = item.name.toLowerCase();
+        return `
+            <label class="mobile-filter-option">
+                <span class="mobile-filter-option__left">
+                    <input
+                        type="checkbox"
+                        data-mobile-group="type"
+                        value="${value}"
+                        ${listingState.filters.type.has(value) ? "checked" : ""}
+                    >
+                    <span>${item.name}</span>
+                </span>
+            </label>
+        `;
+    }).join("");
+
+    const mobileClosing = document.getElementById("mobile-closing-30");
+    if (mobileClosing) {
+        mobileClosing.checked = listingState.closingWithin30;
+    }
+    updateMobileFilterCounts();
+}
+
+function bindMobileFilterOptions() {
+
+    document
+        .querySelectorAll("[data-mobile-group]")
+        .forEach((input) => {
+
+            input.addEventListener("change", () => {
+
+                const group = input.dataset.mobileGroup;
+                const value = input.value;
+
+                if (input.checked) {
+                    listingState.filters[group].add(value);
+                } else {
+                    listingState.filters[group].delete(value);
+                }
+
+                updateMobileFilterCounts();
+
+            });
+
+        });
+
+
+    const closing = document.getElementById("mobile-closing-30");
+
+    if (closing) {
+
+        closing.addEventListener("change", () => {
+
+            listingState.closingWithin30 = closing.checked;
+
+            updateMobileFilterCounts();
+
+        });
+
+    }
+}
+
+function updateMobileFilterCounts() {
+
+    const regionCount =
+        document.getElementById("mobile-region-count");
+
+    const industryCount =
+        document.getElementById("mobile-industry-count");
+
+    const typeCount =
+        document.getElementById("mobile-type-count");
+
+
+    if (regionCount) {
+
+        const count = listingState.filters.region.size;
+
+        regionCount.textContent =
+            count ? `${count} selected` : "";
+
+    }
+
+
+    if (industryCount) {
+
+        const count = listingState.filters.industry.size;
+
+        industryCount.textContent =
+            count ? `${count} selected` : "";
+
+    }
+
+
+    if (typeCount) {
+
+        const count = listingState.filters.type.size;
+
+        typeCount.textContent =
+            count ? `${count} selected` : "";
+
+    }
+}
+
+function openMobileFilterSheet() {
+
+    const sheet =
+        document.getElementById("mobile-filter-sheet");
+
+    const overlay =
+        document.getElementById("mobile-filter-overlay");
+
+    if (!sheet || !overlay) return;
+
+
+    renderMobileFilterOptions();
+    bindMobileFilterOptions();
+
+
+    sheet.classList.add("is-open");
+    overlay.classList.add("is-open");
+
+    sheet.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("mobile-filter-open");
+}
+
+
+function closeMobileFilterSheet() {
+
+    const sheet =
+        document.getElementById("mobile-filter-sheet");
+
+    const overlay =
+        document.getElementById("mobile-filter-overlay");
+
+    if (!sheet || !overlay) return;
+
+
+    sheet.classList.remove("is-open");
+    overlay.classList.remove("is-open");
+
+    sheet.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("mobile-filter-open");
+}
+
+function bindMobileFilterGroups() {
+
+    document
+        .querySelectorAll("[data-mobile-filter-group]")
+        .forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                const group =
+                    button.closest(".mobile-filter-group");
+
+                if (!group) return;
+
+                group.classList.toggle("is-open");
+
+            });
+
+        });
+
+}
+
+function bindMobileFilterActions() {
+
+    const openButton =
+        document.getElementById("mobile-filter-open");
+
+    const closeButton =
+        document.getElementById("mobile-filter-close");
+
+    const overlay =
+        document.getElementById("mobile-filter-overlay");
+
+    const applyButton =
+        document.getElementById("mobile-filter-apply");
+
+    const resetButton =
+        document.getElementById("mobile-filter-reset");
+
+
+    // -----------------------------------------------------
+    // Open
+    // -----------------------------------------------------
+
+    if (openButton) {
+
+        openButton.addEventListener("click", () => {
+            openMobileFilterSheet();
+        });
+
+    }
+
+
+    // -----------------------------------------------------
+    // Close
+    // -----------------------------------------------------
+
+    if (closeButton) {
+
+        closeButton.addEventListener("click", () => {
+            closeMobileFilterSheet();
+        });
+
+    }
+
+
+    if (overlay) {
+
+        overlay.addEventListener("click", () => {
+            closeMobileFilterSheet();
+        });
+
+    }
+
+
+    // -----------------------------------------------------
+    // Apply
+    // -----------------------------------------------------
+
+    if (applyButton) {
+
+        applyButton.addEventListener("click", () => {
+
+            listingState.currentPage = 1;
+
+            renderListingPage();
+
+            closeMobileFilterSheet();
+
+        });
+
+    }
+
+
+    // -----------------------------------------------------
+    // Clear all
+    // -----------------------------------------------------
+
+    if (resetButton) {
+
+        resetButton.addEventListener("click", () => {
+
+            listingState.filters.region.clear();
+            listingState.filters.industry.clear();
+            listingState.filters.type.clear();
+
+            listingState.closingWithin30 = false;
+
+            renderMobileFilterOptions();
+            bindMobileFilterOptions();
+
+            updateMobileFilterCounts();
+
+        });
+
+    }
+
+}
+
 // --- 6. Independent scroll: sidebar and results each get their own
 // fixed height (viewport height minus their own top offset), so a
 // scroll gesture over one panel never moves the other or the page.
@@ -696,13 +1012,29 @@ function bindSearchClear() {
 // ===== Page init ===== //
 
 document.addEventListener("DOMContentLoaded", () => {
+
     if (isTenderListingPage()) {
+
         bindClosing30Filter();
+
         renderListingPage();
+
         bindFilterCollapse();
+
         bindSortControl();
-        window.addEventListener("resize", syncListingPanelHeights);
+
+        // Mobile bottom-sheet filters
+        bindMobileFilterActions();
+
+        bindMobileFilterGroups();
+
+        window.addEventListener(
+            "resize",
+            syncListingPanelHeights
+        );
     }
 
+
     bindSearchClear();
+
 });

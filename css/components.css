@@ -1233,3 +1233,33 @@
 .results::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-muted);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile-filter-bar {
+    display: none;
+}
+.mobile-filter-overlay {
+    display: none;
+}
+
+.mobile-filter-sheet {
+    display: none;
+}
